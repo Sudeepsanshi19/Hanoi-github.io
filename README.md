@@ -1,4 +1,4 @@
-# Course: Design and Analysis of Algorithms
+# Course: Design and Analysis of Algorithms.
 
 ## **Introduction**
 
