@@ -1,119 +1,125 @@
-
 /* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; /* Consistent font */
 }
 
 /* Global Styles */
 body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.8;
-    margin: 0;
-    padding: 20px;
-    background: linear-gradient(to bottom right, #8A2BE2, #F0F8FF); /* Vivid Violet to Alice Blue */
-    color: #212529;
+  line-height: 1.8;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(to bottom right, #8A2BE2, #F0F8FF); /* Vivid Violet to Alice Blue */
+  color: #212529;
+  min-height: 100vh; /* Set minimum height for full viewport coverage */
+  display: flex;
+  flex-direction: column; /* Center content vertically */
+  justify-content: center;
+  align-items: center;
 }
 
 /* Header */
 header {
-    background-color: #8A2BE2; /* Vivid Violet */
-    color: #FFFFFF; /* White */
-    padding: 20px 0;
-    text-align: center;
-    border-radius: 0 0 15px 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-color: #8A2BE2; /* Vivid Violet */
+  color: #FFFFFF; /* White */
+  padding: 20px 0;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 40px;
 }
 
 header h1 {
-    font-size: 2.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
 }
 
 /* Main Section */
 main {
-    background: #FFFFFF; /* White */
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+  background: #FFFFFF; /* White */
+  max-width: 900px;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
 main:hover {
-    transform: scale(1.03);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px); 
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* Content Blocks */
 div {
-    background: #F5F5F5; /* Light Gray */
-    border: 1px solid #DCDCDC; /* Light Gray */
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+  background: #F5F5F5; /* Light Gray */
+  border: 1px solid #DCDCDC; /* Light Gray */
+  padding: 30px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
 div:hover {
-    background-color: #E6E6FA; /* Lavender */
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: #E6E6FA; /* Lavender */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Headings */
 h2 {
-    font-size: 2rem;
-    color: #8A2BE2; /* Vivid Violet */
-    text-align: center;
-    margin-bottom: 10px;
-    letter-spacing: 1.2px;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 2.2rem;
+  color: #8A2BE2; /* Vivid Violet */
+  text-align: center;
+  margin-bottom: 15px;
+  letter-spacing: 1.2px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 h2:hover {
-    color: #4A148C; /* Deep Violet */
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: #4A148C; /* Deep Violet */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Paragraphs */
 p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 15px;
-    line-height: 1.7;
-    transition: color 0.3s ease, letter-spacing 0.3s ease;
-    text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.7;
+  transition: color 0.3s ease-in-out, letter-spacing 0.3s ease-in-out;
+  text-align: justify; /* Justify text for better readability */
 }
 
 p:hover {
-    color: #333; /* Darker Gray */
+  color: #333; /* Darker Gray */
+  letter-spacing: 1px;
 }
 
 /* Links */
 a {
-    color: inherit;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    display: block;
+  color: #8A2BE2; /* Vivid Violet */
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
 }
 
 a:hover {
-    text-decoration: underline;
+  color: #4A148C; /* Deep Violet */
+  text-decoration: underline;
 }
 
 /* Footer */
 footer {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #FFFFFF;
-    background-color: #8A2BE2; /* Vivid Violet */
-    padding: 20px 0;
-    border-radius: 10px;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #FFFFFF;
+  background-color: #8A2BE2; /* Vivid Violet */
+  padding: 20px 0;
+  border-radius: 10px;
 }
