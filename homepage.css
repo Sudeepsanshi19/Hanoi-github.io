@@ -9,8 +9,8 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.8;
-    color: #1c1c1c;
-    background: linear-gradient(to right, #d9a7c7, #fffcdc);
+    color: #333; /* Darker text for better readability */
+    background: linear-gradient(to right, #f0932b, #f5d76e); /* Warm color gradient */
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -19,8 +19,8 @@ body {
 }
 
 header.main-header {
-    background-color: #ff6347;
-    color: #ffffff;
+    background-color: #e67e22; /* Orange */
+    color: #fff;
     padding: 1.5rem 0;
     text-align: center;
     border-radius: 15px;
@@ -43,8 +43,8 @@ header.main-header h1 {
 }
 
 header.secondary-header {
-    background-color: #ff7f50;
-    color: #ffffff;
+    background-color: #d35400; /* Darker orange */
+    color: #fff;
     padding: 1rem;
     text-align: center;
     border-radius: 15px;
@@ -68,24 +68,25 @@ header.secondary-header nav {
 }
 
 header.secondary-header nav a {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.3rem;
     padding: 0.5rem 1rem;
     border: 2px solid transparent;
     border-radius: 10px;
-    background-color: #ff4500;
+    background-color: #f39c12; /* Lighter orange */
     flex: 1;
     text-align: center;
-    transition: background-color 0.3s ease, border 0.3s ease;
+    transition: background-color 0.3s ease, border 0.3s ease, transform 0.2s ease;
 }
 
 header.secondary-header nav a:hover {
-    background-color: #ff6347;
-    border: 2px solid #ffffff;
-    color: #ffffff;
+    background-color: #d35400;
+    border: 2px solid #fff;
+    color: #fff;
     border-radius: 15px;
+    transform: scale(1.05); /* Slight scale effect on hover */
 }
 
 @media (max-width: 768px) {
@@ -101,7 +102,7 @@ header.secondary-header nav a:hover {
 }
 
 main {
-    background: #ffffff;
+    background: #fff;
     padding: 3rem;
     border-radius: 15px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
@@ -115,7 +116,7 @@ main:hover {
 }
 
 section {
-    background: #fff7f0;
+    background: #fefae0; /* Off-white */
     padding: 2.5rem;
     border-radius: 10px;
     margin-bottom: 2.5rem;
@@ -130,26 +131,26 @@ section:hover {
 
 section h2 {
     font-size: 2.1rem;
-    color: #ff4500;
+    color: #d35400; /* Orange */
     margin-bottom: 1rem;
-    border-bottom: 2px solid #f4a261;
+    border-bottom: 2px solid #f39c12; /* Lighter orange */
     padding-bottom: 0.5rem;
 }
 
 section h3 {
     font-size: 1.8rem;
-    color: #e76f51;
+    color: #e67e22; /* Orange */
     margin-bottom: 0.8rem;
 }
 
 section h4 {
     font-size: 1.4rem;
-    color: #264653;
+    color: #333; /* Darker text */
     margin-bottom: 0.6rem;
 }
 
 footer {
-    background: #ff4500;
+    background: #d35400; /* Darker orange */
     color: #fff;
     text-align: center;
     padding: 1.5rem;
@@ -160,7 +161,7 @@ footer {
 }
 
 footer:hover {
-    background: #ff6347;
+    background: #e67e22; /* Orange */
 }
 
 @media (max-width: 768px) {
