@@ -13,22 +13,24 @@ body {
   padding: 20px;
   background: linear-gradient(to bottom right, #8A2BE2, #F0F8FF); /* Vivid Violet to Alice Blue */
   color: #212529;
-  min-height: 100vh; /* Set minimum height for full viewport coverage */
+  min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Center content vertically */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden; /* Hide scrollbars */
 }
 
 /* Header */
 header {
-  background-color: #8A2BE2; /* Vivid Violet */
-  color: #FFFFFF; /* White */
+  background-color: rgba(138, 43, 226, 0.8); /* Semi-transparent Vivid Violet */
+  color: #FFFFFF;
   padding: 20px 0;
   text-align: center;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   margin-bottom: 40px;
+  backdrop-filter: blur(5px); /* Add blur effect */
 }
 
 header h1 {
@@ -36,11 +38,12 @@ header h1 {
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 10px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Main Section */
 main {
-  background: #FFFFFF; /* White */
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent White */
   max-width: 900px;
   padding: 40px;
   border-radius: 15px;
@@ -49,14 +52,14 @@ main {
 }
 
 main:hover {
-  transform: translateY(-5px); 
+  transform: translateY(-5px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* Content Blocks */
 div {
-  background: #F5F5F5; /* Light Gray */
-  border: 1px solid #DCDCDC; /* Light Gray */
+  background: rgba(245, 245, 245, 0.8); /* Semi-transparent Light Gray */
+  border: 1px solid rgba(205, 205, 205, 0.5); /* Semi-transparent Light Gray Border */
   padding: 30px;
   margin: 20px auto;
   border-radius: 12px;
@@ -65,7 +68,7 @@ div {
 }
 
 div:hover {
-  background-color: #E6E6FA; /* Lavender */
+  background-color: rgba(230, 230, 250, 0.8); /* Semi-transparent Lavender */
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -92,7 +95,7 @@ p {
   margin-bottom: 20px;
   line-height: 1.7;
   transition: color 0.3s ease-in-out, letter-spacing 0.3s ease-in-out;
-  text-align: justify; /* Justify text for better readability */
+  text-align: justify;
 }
 
 p:hover {
@@ -119,7 +122,8 @@ footer {
   text-align: center;
   font-size: 0.9rem;
   color: #FFFFFF;
-  background-color: #8A2BE2; /* Vivid Violet */
+  background-color: rgba(138, 43, 226, 0.8); /* Semi-transparent Vivid Violet */
   padding: 20px 0;
   border-radius: 10px;
+  backdrop-filter: blur(5px); /* Add blur effect */
 }
