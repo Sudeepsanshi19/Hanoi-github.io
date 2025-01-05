@@ -1,0 +1,126 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+#define TABLE_SIZE 10
+
+struct Node {
+    int data;
+    Node* next;
+};
+
+
+void addKey(vector<Node*>& hashTable, int key) {
+    int index = key % TABLE_SIZE;
+    Node* newNode = new Node{key, hashTable[index]};
+    hashTable[index] = newNode;
+}
+
+
+bool searchKey(vector<Node*>& hashTable, int key) {
+    int index = key % TABLE_SIZE;
+    Node* current = hashTable[index];
+    while (current) {
+        if (current->data == key) return true;
+        current = current->next;
+    }
+    return false;
+}
+
+
+bool deleteKey(vector<Node*>& hashTable, int key) {
+    int index = key % TABLE_SIZE;
+    Node* current = hashTable[index];
+    Node* prev = nullptr;
+
+    while (current) {
+        if (current->data == key) {
+            if (prev) prev->next = current->next;
+            else hashTable[index] = current->next;
+
+            delete current;
+            return true;
+        }
+        prev = current;
+        current = current->next;
+    }
+    return false;
+}
+
+
+void displayHashTable(const vector<Node*>& hashTable) {
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        cout << i << ": ";
+        Node* current = hashTable[i];
+        while (current) {
+            cout << current->data << " -> ";
+            current = current->next;
+        }
+        cout << "NULL" << endl;
+    }
+}
+
+
+void deleteHashTable(vector<Node*>& hashTable) {
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        Node* current = hashTable[i];
+        while (current) {
+            Node* temp = current;
+            current = current->next;
+            delete temp;
+        }
+        hashTable[i] = nullptr;
+    }
+}
+
+int main() {
+    vector<Node*> hashTable(TABLE_SIZE, nullptr);
+    int choice, key;
+
+    while (true) {
+        cout << "1. Add Key\n";
+        cout << "2. Search Key\n";
+        cout << "3. Delete Key\n";
+        cout << "4. Display Hash Table\n";
+        cout << "5. Delete Hash Table\n";
+        cout << "6. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                cout << "Enter key: ";
+                cin >> key;
+                addKey(hashTable, key);
+                break;
+            case 2:
+                cout << "Enter key: ";
+                cin >> key;
+                if (searchKey(hashTable, key))
+                    cout << "Key found\n";
+                else
+                    cout << "Key not found\n";
+                break;
+            case 3:
+                cout << "Enter key: ";
+                cin >> key;
+                if (deleteKey(hashTable, key))
+                    cout << "Key deleted\n";
+                else
+                    cout << "Key not found\n";
+                break;
+            case 4:
+                displayHashTable(hashTable);
+                break;
+            case 5:
+                deleteHashTable(hashTable);
+                cout << "Hash table deleted\n";
+                break;
+            case 6:
+                deleteHashTable(hashTable);
+                return 0;
+            default:
+                cout << "Invalid choice\n";
+        }
+    }
+}
