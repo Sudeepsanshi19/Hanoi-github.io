@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Environmental Sustainability</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #e0f7fa; /* Light cyan background */
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #0077b6; /* Soft blue header */
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        /* Content Section */
+        section {
+            background-color: #ffffff; /* White background for sections */
+            border: 1px solid #0077b6; /* Border color matching the header */
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2.5rem;
+        }
+
+        section h2 {
+            margin-top: 1.5rem;
+            color: #0077b6; /* Soft blue color for headings */
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        section h3 {
+            color: #0077b6;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        section h4 {
+            color: #555;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        section p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-top: 0.8rem;
+        }
+
+        /* List Styling */
+        ul {
+            margin-top: 1.2rem;
+            margin-left: 1.5rem;
+            list-style-type: disc;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Link Styling */
+        a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #0077b6; /* Soft blue button */
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            margin-top: 1.5rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: #005f73; /* Darker blue on hover */
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            section h3 {
+                font-size: 1.25rem;
+            }
+
+            section p, ul {
+                font-size: 1rem;
+            }
+
+            a {
+                padding: 10px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Urban Environmental Sustainability</h1>
+        <p>Optimizing Resources and Monitoring Environmental Parameters for Sustainable Cities</p>
+    </header>
+
+    <!-- Content Section -->
+    <section>
+        <h2>Problem 1: Monitoring Air Quality Across City Regions</h2>
+        <p>
+            To efficiently distribute air quality monitoring devices or collect data, the shortest path between air quality monitoring stations needs to be calculated. This can be achieved using the Floyd-Warshall algorithm, which finds the shortest paths between all pairs of nodes in a graph. Key considerations include:
+        </p>
+        <ul>
+            <li><strong>Graph Representation:</strong> Representing air quality stations as nodes and the paths between them as edges.</li>
+            <li><strong>Optimizing Data Collection:</strong> Identifying the most efficient routes for monitoring data collection.</li>
+        </ul>
+        <p> Implementation code for this problem: <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/subbramnnya/CODES/floyd warshall.cpp">Floyd-Warshall code</a></p>
+
+        <h2>Problem 2: Optimizing Waste Management Routes</h2>
+        <p>
+            Optimizing waste management routes for waste collection vehicles is crucial for minimizing fuel costs and time. This problem can be solved using Dijkstra's algorithm to find the shortest path between waste collection points. Considerations include:
+        </p>
+        <ul>
+            <li><strong>Route Optimization:</strong> Minimizing time and fuel usage by calculating the shortest paths.</li>
+            <li><strong>Dynamic Adjustments:</strong> Adapting the routes in case of roadblocks or traffic conditions.</li>
+        </ul>
+        <p> Implementation code for this problem: <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/subbramnnya/CODES/dijkstra.cpp">Dijkstra's code</a></p>
+
+        <h2>Problem 3: Detecting Pollutant Patterns in Sensor Data</h2>
+        <p>
+            Detecting specific pollutant patterns, such as sudden spikes in PM2.5 levels, from large datasets of air quality sensor readings can be done using the Rabin-Karp algorithm. This algorithm efficiently searches for specific patterns in large text or data sequences. Key considerations include:
+        </p>
+        <ul>
+            <li><strong>Pattern Detection:</strong> Identifying significant pollutant spikes in data streams.</li>
+            <li><strong>Data Handling:</strong> Efficiently processing large datasets to detect anomalies.</li>
+        </ul>
+        <p> Implementation code for this problem: <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/subbramnnya/CODES/rabin_karp.cpp">Rabin-Karp code</a></p>
+    </section>
+</body>
+
+</html>
