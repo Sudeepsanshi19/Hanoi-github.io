@@ -7,6 +7,129 @@
     <title>Team Members</title>
     <link rel="stylesheet" href="stylereflect.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #FFA500; /* Orange color */
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            color: #6A1EB2; /* Purple color for hover */
+        }
+
+        /* Header */
+        header {
+            background-color: #FFA500; /* Orange color */
+            color: #fff;
+            text-align: center;
+            padding: 3rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Main Content */
+        main {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        main h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #FFA500; /* Orange color */
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .team-member {
+            background-color: #f3eff2;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-member a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .team-member:hover {
+            background-color: rgb(250, 1, 250);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-member a:hover {
+            color: #6A1EB2; /* Purple color for hover */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #FFA500; /* Orange color */
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            border-radius: 10px;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -37,6 +160,9 @@
             </div>
         </div>
     </main>
+    <footer>
+        <p>&copy; 2024 Team Project | All Rights Reserved</p>
+    </footer>
 </body>
 
 </html>
