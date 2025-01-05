@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City Disaster Management System</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #ff5733;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: #fff;
+            border: 1px solid #ff5733;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2.5rem;
+        }
+
+        section h2 {
+            color: #ff5733;
+            margin-bottom: 1rem;
+        }
+
+        section h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        section ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+
+        section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        section p {
+            font-size: 1rem;
+            margin-top: 0.8rem;
+        }
+
+        /* Highlight Box */
+        .highlight {
+            background-color: #fff8e6;
+            padding: 1rem;
+            border-left: 5px solid #ff5733;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Smart City Disaster Management System</h1>
+        <p> data structures to ensure safety and efficiency during disasters.</p>
+    </header>
+
+    <section>
+        <h2>Business Cases</h2>
+        <p>
+            To provide a real-time, adaptive system for detecting disasters, coordinating emergency responses, and minimizing the impact on life and property.
+        </p>
+    </section>
+
+    <section>
+        <h2>Subtasks </h2>
+
+        <h3>1. Binary Search Tree (BST)</h3>
+        <p><strong></strong> Resource Allocation</p>
+        <ul>
+            <li>Organizes emergency resources (ex: medical supplies, rescue vehicles) based on demand and location.</li>
+            <li>Allows quick lookups for nearest available resources.</li>
+        </ul>
+        <p><strong>Example:</strong> Quickly locating the nearest hospital or emergency shelter for a specific affected area.</p>
+
+        <h3>2. AVL Tree</h3>
+        <p><strong></strong> Real-Time Risk Assessment</p>
+        <ul>
+            <li>Maintains a balanced structure for evaluating risk scores of different city zones.</li>
+          
+        </ul>
+        <p><strong>Example:</strong> Identifying the most vulnerable areas in real-time for prioritization.</p>
+
+        <h3>3. Fenwick Tree (Binary Indexed Tree)</h3>
+        <p><strong></strong> Cumulative Damage and Relief Data Analysis</p>
+        <ul>
+            <li>Tracks cumulative data like the number of affected people or total damage in a region.</li>
+            <li>squick updates when new data is added or removed.</li>
+        </ul>
+        <p><strong>Example:</strong> Aggregating real-time data on the number of evacuated citizens.</p>
+
+        <h3>4. KMP algorithm</h3>
+        <p><strong></strong> Pattern Matching in Disaster Reports</p>
+        <ul>
+            <li>Matches specific keywords or phrases in real-time social media and news reports.</li>
+            <li>Identifies critical patterns such as “flood warning.”</li>
+        </ul>
+        <p><strong>Example:</strong> Detecting emerging disaster hotspots from live tweets or emergency calls.</p>
+
+        <h3>5. Recommendation Engines</h3>
+        <p><strong></strong> Route Suggestions</p>
+        <ul>
+            <li>Recommends optimal routes based on real-time traffic and disaster data.</li>
+            <li>Suggests resources like nearby shelters or medical facilities based on user location.</li>
+        </ul>
+        <p><strong>Example:</strong> Providing evacuees with real-time guidance to the safest and fastest shelter.</p>
+
+        <h3>6. BFS or DFS</h3>
+        <p><strong></strong> Search and Rescue Operations</p>
+        <ul>
+            <li><strong>BFS:</strong> Identifies the shortest path for rescue teams to go through affected areas.</li>
+            <li><strong>DFS:</strong> Explores all possible connections to locate survivors trapped in collapsed buildings.</li>
+        </ul>
+        <p><strong>Example:</strong> Mapping and isolating flooded roads to identify safe rescue paths.</p>
+    </section>
+
+    <section>
+        <h2> Example</h2>
+        <div class="highlight">
+            <p><strong>1. Disaster Detection:</strong> KMP scans real-time data to detect disaster signals, while AVL Tree updates risk levels across city zones.</p>
+            <p><strong>2. Resource Allocation:</strong> BST matches resources with high-priority , and Fenwick Tree tracks cumulative data.</p>
+            <p><strong>3. Evacuation Planning:</strong> Recommendation Engines suggest personalized routes, and BFS calculates shortest paths to safe zones.</p>
+            <p><strong>4. Post-Disaster Recovery:</strong> DFS helps locate survivors, and Fenwick Tree aggregates recovery data for optimization.</p>
+        </div>
+        <h4>Data generated from a small part of the city</h4>
+        <p>Here is some data and a graph generated for the above system from a small part of our city project. Link below:</p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/chethan/smart_city_data_with_kmp.pdf">Data generated</a>
+ <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/chethan/tree.png">diagram</a>
+        <h4>dfs implementation in c++</h4>
+        <p>Efficiency: O(V+E)</p>
+        <p>Here is the implementation of dfs algorithm in C++. You can view the code using the link below:</p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/chethan/dfs.cpp">DFS Code</a>
+        <h4>bfs implementation in c++</h4>
+        <p>Efficiency: O(V+E)</p>
+        <p>Here is the implementation of bfs algorithm in C++. You can view the code using the link below:</p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/chethan/bfs.cpp">BFS Code</a>
+         <h4>BST implementation in c++</h4>
+        <p>Efficiency: worst:O(N)</p>
+         <p>Efficiency: BEST:O(N log N )</p>
+        <p>Here is the implementation of BST in C++. You can view the code using the link below:</p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/chethan/bstfull.cpp">BST Code</a>
+        <h4>AVL tree implementation in c++</h4>
+        <p>Efficiency: O(log N)</p>
+        <p>Here is the implementation of avl tree in C++. You can view the code using the link below:</p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/chethan/AVL.cpp">AVL TREE</a>
+        <h4>Fenwick implementation in c++</h4>
+        <p>Efficiency:update: O(log N)</p>
+         <p>Efficiency:Query: O(log N)</p>
+        <p>Here is the implementation of Fenwick tree in C++. You can view the code using the link below:</p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/chethan/fenwick_tree.cpp">Fenwick TREE</a>
+        <h4>recommendation Engine  implementation in c++</h4>
+       
+        <p>Here is the implementation of Recommendatioon engine in C++. You can view the code using the link below:</p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/chethan/fenwick_tree.cpp">Recommendation Engine</a>
+         <h4>KMP implementation in c++</h4>
+       <p>Efficiency: O(N+M)</p>
+        <p>Here is the implementation of KMP in C++. You can view the code using the link below:</p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/chethan/kmp.cpp">KMP</a>
+    </section>
+</body>
+
+</html>
