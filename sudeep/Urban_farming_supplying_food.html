@@ -1,1 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Farming Management with Efficient Algorithms</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 17px;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #8a2be2;
+            color: white;
+            padding: 2.2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        /* Content Section */
+        section {
+            background-color: #fff;
+            border: 1px solid #8a2be2;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2.5rem;
+        }
+
+        section h2 {
+            margin-top: 1.5rem;
+            color: #8a2be2;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        section h3 {
+            color: #8a2be2;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        section h4 {
+            color: #555;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        section p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-top: 0.8rem;
+        }
+
+        ul {
+            margin-top: 1.2rem;
+            margin-left: 1.5rem;
+            list-style-type: disc;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #8a2be2;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            margin-top: 1.1rem;
+            margin-bottom: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: #8a2be2;
+            transform: scale(1.05);
+        }
+
+        .farming-table {
+            width: 400px;
+            border-collapse: collapse;
+            margin: 1rem auto 2rem auto;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .farming-table th, .farming-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .farming-table th {
+            color: white;
+            background-color: #8a2be2;
+            text-align: left;
+        }
+
+        .graph1 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .graph1 img {
+            max-width: 500px;
+            margin: 1rem auto 2rem auto;
+            border: 1px solid #8a2be2;
+            border-radius: 10px;
+        }
+
+        .graph-caption {
+            margin-top: -22px;
+            text-align: center;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1.2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            section h3 {
+                font-size: 1.25rem;
+            }
+
+            section p, ul {
+                font-size: 1rem;
+            }
+
+            a {
+                padding: 10px 18px;
+            }
+        }
+        header.secondary-header {
+            margin-right: 50px;
+            background-color: #872ddc;  
+            color: #FFFFFF;
+            padding: 0.5rem 0.5rem;
+            padding-top: 0px;
+            text-align: center;
+            border-radius: 15px; 
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+            margin-bottom: 2.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%; 
+            box-sizing: border-box; 
+        }
+        
+        header.secondary-header:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
+        }
+        
+        header.secondary-header nav {
+            display: flex;
+            justify-content: space-between; 
+            flex-wrap: wrap; 
+            gap: 20px;
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        
+        header.secondary-header nav a {
+            color: #FFFFFF; 
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3rem; 
+            padding: 0.5rem 1rem;
+            border: 2px solid transparent;
+            border-radius: 10px; 
+            background-color: #9630f6;
+            flex: 1; 
+            text-align: center;
+        }
+        
+        header.secondary-header nav a:hover {
+            background-color: #7507f2b3; 
+            border: 2px solid #FFFFFF; 
+            color: #FFFFFF; 
+            border-radius: 15px 15px 15px 15px;
+        }
+        
+        @media (max-width: 768px) {
+            header.secondary-header nav {
+                gap: 10px;
+            }
+        
+            header.secondary-header nav a {
+                font-size: 1.1rem;
+                padding: 0.8rem 1.5rem;
+                width: 100%;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            header.secondary-header nav {
+                flex-direction: row; 
+            }
+        
+            header.secondary-header nav a {
+                width: auto; 
+            }
+        }
+        
+        
+        header.secondary-header nav a:hover {
+            background-color: #7507f2b3; 
+            border: 2px solid #FFFFFF; 
+            color: #FFFFFF; 
+            border-radius: 15px 15px 15px 15px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+            flex-direction: column;
+            align-items: center;
+            }
+
+            nav ul li {
+            margin-bottom: 0.5rem;
+            }
+
+            nav ul li a {
+            font-size: 1rem;
+            padding: 0.4rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="secondary-header">
+        <nav>
+            <a href="prajwal_businesscase.html">All Business Cases</a>
+            <a href="tourism_businessm.html">Tourism Management</a>
+            <a href="water_manage.html">smart water Management</a>
+        </nav>
+    </header>
+
+    <!-- Header -->
+    <header>
+        <h1>Urban Farming and supplying fresh food</h1>
+        <p>Supplying Fresh Food to Citizens through Smart Algorithms</p>
+    </header>
+
+    <!-- Content Section -->
+    <section>
+        <h2>Introduction</h2>
+        <p>
+            Urban farming is a sustainable approach to provide fresh food to city dwellers. 
+            By utilizing innovative techniques and efficient algorithms, urban farming can be optimized to meet 
+            the growing demand for fresh produce in urban areas. Proper management of urban farming can transform 
+            cities into self-sustaining ecosystems, promoting health and well-being among residents.
+        </p>
+    </section>
+
+    <section>
+        <h3>Data Collection about farming</h3>
+        <p>
+            To manage urban farming efficiently, it is essential to gather and organize data about available land, farms, 
+            crops, and demand within the city. This data can be represented using arrays and linked lists to dynamically manage the 
+            varying number of crops each season.
+        </p>
+        <h4>Data Structure</h4>
+        <p>
+            We use Binary trees to represent farm locations, crop types, and land area. 
+        </p>
+        <p><strong>Example of Farming Locations and Their Crops:</strong></p>
+        <table class="farming-table">
+            <tr>
+            <th>Farm Location</th>
+            <th>Crop Types</th>
+            <th>Land Area (sq. meters)</th>
+            </tr>
+            <tr>
+            <td>Rooftop Garden</td>
+            <td>Tomatoes, Lettuce</td>
+            <td>150</td>
+            </tr>
+            <tr>
+            <td>Community Park</td>
+            <td>Carrots, Spinach</td>
+            <td>300</td>
+            </tr>
+            <tr>
+            <td>Vertical Farm</td>
+            <td>Peppers, Cucumbers</td>
+            <td>200</td>
+            </tr>
+            <tr>
+            <td>Hydroponic Facility</td>
+            <td>Broccoli, Eggplants</td>
+            <td>250</td>
+            </tr>
+            <tr>
+            <td>Urban Greenhouse</td>
+            <td>Tomatoes, Spinach</td>
+            <td>180</td>
+            </tr>
+            <tr>
+            <td>Backyard Farm</td>
+            <td>Lettuce, Carrots</td>
+            <td>100</td>
+            </tr>
+        </table>
+        <p>
+            Binary trees are particularly useful in this context because they allow for efficient searching, insertion, and deletion of farms and crops. This efficiency is crucial for managing large datasets and adapting to changing urban farming conditions and demands.
+        </p>
+        <p>
+            Here is an example of how binary trees can be used to represent farming data in C++. You can view the code using the link below:
+        </p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/sudeep/codes/binary_trees_farm.cpp">Binary Tree Code</a>
+        <p><strong>Why Use Binary Trees Instead of Linked Lists?</strong></p>
+        <p><strong>&#9673</strong> Binary trees provide faster search operations compared to linked lists. While linked lists have a time complexity of O(n) for search operations, binary trees can achieve O(log n) time complexity in balanced scenarios.</p>
+        <p><strong>&#9673</strong> Binary trees allow for hierarchical data representation, which is more intuitive for certain types of data, such as hierarchical relationships between farms and crops.</p>
+        <p><strong>&#9673</strong> Binary trees support efficient range queries, which can be useful for querying farms within a certain land area range or crops within a certain yield range.</p>
+        <p><strong>&#9673</strong> Binary trees can be easily balanced (e.g., using AVL trees or Red-Black trees) to ensure optimal performance for dynamic datasets where insertions and deletions are frequent.</p>
+        </section>
+    <section>
+        <h3>Identifying Farming Locations</h3>
+        <p>
+            For effective urban farming, it is essential to identify suitable locations within the city. These locations can be represented as nodes in a graph, with edges representing the connectivity and distances between them. Below is an example of 5 farming locations with assigned numbers.
+            <table class="farming-table">
+                <tr>
+                    <th>Location</th>
+                    <th>Number</th>
+                </tr>
+                <tr>
+                    <td>Rooftop Garden</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Vertical Farm</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Hydroponic Facility</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Urban Greenhouse</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Backyard Farm</td>
+                    <td>3</td>
+                </tr>
+            </table>
+        </p>
+        <strong>The below graph represents farming locations in the city:</strong>
+        <p>Numbers in nodes represent the farming locations assigned in the above table.</p>
+        <div class="graph1">
+            <img src="farming_graph.png" alt="Farming Graph">
+        </div>
+        <p class="graph-caption">
+            Figure F1: Graph representing farming locations in the city with distances between them
+        </p>
+        <p>
+            Using Depth First Search (DFS), we can traverse the graph to identify all accessible farming locations starting from a chosen node.
+        </p>
+        <p>
+            Here is the implementation of Depth First Search for farming data in C++. You can view the code using the link below:
+        </p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/sudeep/codes/dfs_farming.cpp">Depth First Search</a>
+        <p>We chose Depth First Search (DFS) for this task because it is effective for exploring all possible paths in a graph, making it suitable for identifying farming locations and their connectivity.</p>
+        <p><strong>&#9673</strong> DFS is ideal for solving problems like identifying all connected farming locations or determining if a route exists between two locations, which directly aligns with urban farming management tasks.</p>
+        <p><strong>&#9673</strong> With a time complexity of O(V + E) (where V is the number of vertices and E is the number of edges), DFS is efficient for graphs like city maps.</p>
+    </section>
+    <section>
+        <h3>Finding Shortest Paths Between Farming Locations</h3>
+        <p>
+            After identifying productive farming locations, the next important step is to provide efficient ways to transport produce between them. Knowing the shortest paths between these locations can significantly enhance the distribution process. Consider the graph represented in <strong>Figure F1</strong>.
+        </p>
+        <p>
+            <strong>The below are the farming locations in the city along with distances between them:</strong>
+            <ul>
+                <li>Vertical Farm → Hydroponic Facility (115), Urban Greenhouse (100), Backyard Farm (20), Rooftop Garden (80)</li>
+                <li>Rooftop Garden → Vertical Farm (80), Hydroponic Facility (90)</li>
+                <li>Hydroponic Facility → Urban Greenhouse (65), Vertical Farm (115), Rooftop Garden (90)</li>
+                <li>Urban Greenhouse → Vertical Farm (100), Hydroponic Facility (65), Backyard Farm (60)</li>
+                <li>Backyard Farm → Vertical Farm (20), Urban Greenhouse (60)</li>
+            </ul>
+        </p>
+        <h4>Solution</h4>
+        <p>
+            The Dijkstra's algorithm is an excellent choice for finding the shortest paths between a single source vertex and all other vertices in a weighted graph. In our case, the vertices represent farming locations, and the edge weights represent the distances or travel times between them.
+        </p>
+        <p><strong>Why Dijkstra's Algorithm?</strong></p>
+        <p><strong>&#9673</strong> Dijkstra's algorithm is efficient for finding the shortest path from a single source to all other nodes, making it suitable for optimizing transportation routes in urban farming.</p>
+        <p><strong>&#9673</strong> Dijkstra's algorithm works on both directed and undirected graphs.</p>
+        <p><strong>&#9673</strong> Dijkstra's algorithm has a time complexity of O(V^2) for the simplest implementation using an adjacency matrix, and O((V + E) log V) when using a priority queue with an adjacency list, where V is the number of vertices and E is the number of edges.</p>
+        <p>
+            Here is the implementation of Dijkstra's algorithm to find the shortest paths between farming locations in C++. You can view the code using the link below:
+        </p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/sudeep/codes/dijkstra_farming.cpp">Dijkstra's Algorithm Code</a>
+    </section>
+
+    <section>
+        <h3>Analyzing Crop Demand</h3>
+        <p>
+            To manage urban farming effectively, it is crucial to identify the crops in highest demand based on their monthly consumption. Suppose there are 8 different crops grown in the city, and we need to find the most demanded ones based on their monthly consumption.
+        </p>
+        <p>
+            <strong>The below are the crops in the city along with their monthly consumption:</strong>
+            <table class="farming-table">
+            <tr>
+                <th>Crop</th>
+                <th>Consumption per Month (kg)</th>
+            </tr>
+            <tr>
+                <td>Tomatoes</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <td>Lettuce</td>
+                <td>300</td>
+            </tr>
+            <tr>
+                <td>Carrots</td>
+                <td>700</td>
+            </tr>
+            <tr>
+                <td>Spinach</td>
+                <td>150</td>
+            </tr>
+            <tr>
+                <td>Peppers</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <td>Cucumbers</td>
+                <td>600</td>
+            </tr>
+            <tr>
+                <td>Broccoli</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <td>Eggplants</td>
+                <td>50</td>
+            </tr>
+            </table>
+        </p>
+        <h4>Solution</h4>
+        <p>
+            This helps in optimizing resources, planning infrastructure, and prioritizing strategies for high-demand crops. Sorting allows us to identify the crops requiring more attention, such as better resource allocation.
+        </p>
+        <p><strong>We chose Quick Sort for this task due to its efficiency and suitability for in-place sorting. Quick Sort is a comparison-based sorting algorithm that uses a divide-and-conquer approach. There are several key reasons for choosing Quick Sort:</strong></p>
+        <p><strong>&#9673</strong> Quick Sort has an average time complexity of O(n log n), making it suitable for sorting large datasets, such as city-wide crop consumption records.</p>
+        <p><strong>&#9673</strong> Quick Sort is an in-place algorithm, meaning it requires only a constant amount of additional memory space, which is beneficial for memory-constrained environments.</p>
+        <p>
+            Here is the implementation of Quick Sort for sorting crop demand data in C++. You can view the code using the link below:
+        </p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/sudeep/codes/quick_sort_crop.cpp">Quick Sort Code</a>
+        </section>
+
+        <section>
+            <h3>Quality Control and Monitoring</h3>
+            <p>
+                Monitoring the quality of crops during transportation and at various stages of the supply chain is crucial for ensuring that consumers receive fresh and safe produce. String Matching Algorithms, such as the Rabin-Karp algorithm, can be used for tracking crop batches or quality certification data in documents or records.
+            </p>
+            <h4>Solution</h4>
+            <p>
+                The Rabin-Karp algorithm is an efficient string matching algorithm that uses hashing to find any one of a set of pattern strings in a text. It is particularly useful for detecting patterns in large datasets, such as tracking crop batches or verifying quality certifications.
+            </p>
+            <p><strong>Why Rabin-Karp Algorithm?</strong></p>
+            <p><strong>&#9673</strong> It allows for efficient searching of patterns in large datasets, making it suitable for monitoring quality control data.</p>
+            <p><strong>&#9673</strong> The algorithm can handle multiple patterns simultaneously, which is useful for tracking various quality certifications or crop batches.</p>
+            <p><strong>&#9673</strong> The algorithm has an average and best-case time complexity of O(n + m), where n is the length of the text and m is the length of the pattern, making it efficient for large datasets.</p>
+            <p>
+                Here is the implementation of the Rabin-Karp algorithm for tracking crop batches in C++. You can view the code using the link below:
+            </p>
+            <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/sudeep/codes/rabin_karp.cpp">Rabin-Karp Algorithm Code</a>
+            <p>We chose the Rabin-Karp algorithm for this task because - example, consider a scenario where we need to monitor the occurrence of specific patterns in sensor data collected from various urban farms. If we have a large dataset of temperature readings, the Rabin-Karp 
+                algorithm can quickly identify sequences that match a predefined pattern indicating potential issues, such as a sudden drop in temperature that could harm the crops here is the example for quality checking.</p>
+            <p>
+            string text = "Batch001QualityOKBatch002SpoiledBatch003QualityOK";
+            </p>
+            <p>string pattern = "QualityOK";
+            </p>
+            <p>it will check the quality of the product is ok or not</p>
+            
+
+        </section>
+
+</html>
