@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affordable Housing Development Solutions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #2c3e50, #3e2723);
+            color: white;
+            padding: 23px;
+        }
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 36px;
+        }
+        h2 {
+            font-size: 30px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        h3 {
+            font-size: 26px;
+            color: #f1c40f;
+            margin-bottom: 10px;
+        }
+        h4 {
+            font-size: 24px;
+            color: #ecf0f1;
+            margin-bottom: 15px;
+        }
+        .container {
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .problem, .solution, .reason, .impact, .time-complexity, .space-complexity {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 32px;
+            padding: 12px;
+            background-color: #2c3e50;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            border: 2px solid #3498db;
+            background-color: skyblue;
+        }
+        a:hover {
+            background-color: #34495e;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Smart Parking Solution</h1>
+    </header>
+    <section>
+    <h3>Providing smart parking management systems that use IoT sensors and AI to optimize parking space usage and reduce traffic congestion.</h3>
+    <h3>Revenue Model: Pay-per-use, subscription fees for parking services, and licensing of technology.</h3>
+    </section>
+
+    <section>
+        <h2>Finding the Nearest Available Parking Spot</h2>
+        <h3>Problem:</h3>
+        <p>Drivers waste time circling around looking for parking spots, creating traffic congestion.</p>
+        <h3>Solution:</h3>
+        <p>We use <strong>Prim’s Algorithm</strong> to find the best and shortest path to the nearest available parking spot.</p>
+        <h4>Reason for Solution (with Used Algorithm):</h4>
+        <p><strong>Prim’s Algorithm</strong> helps us build an efficient route to the nearest parking spot by connecting all parking spaces with minimal cost, ensuring we avoid unnecessary detours. This algorithm works well when dealing with a network of roads or parking spots.</p>
+        <h3>Impact:</h3>
+        <p>Less time wasted searching for a parking spot, reduced traffic congestion, and lower fuel consumption.</p>
+        <h3>Time Complexity:</h3>
+        <p><strong>O(E log V)</strong>, where E is the number of edges (roads) and V is the number of vertices (parking spots).</p>
+        <h3>Space Complexity:</h3>
+        <p><strong>O(V + E)</strong>, where V is the number of parking spots and E is the number of road connections.</p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/guru/code/Prim%E2%80%99s.cpp">Prim's Code</a>
+    </section>
+
+    <section>
+        <h2> Finding the Right Parking Spot for Your Vehicle</h2>
+        <h3>Problem:</h3>
+        <p>How do we quickly find the right parking spot for specific vehicle types (e.g., electric vehicles, compact cars)?</p>
+        <h3>Solution:</h3>
+        <p>We use a <strong>Trie</strong> data structure to store and search parking spots based on vehicle types.</p>
+        <h4>Reason for Solution (with Used Algorithm):</h4>
+        <p><strong>Trie</strong> allows for fast searches for vehicle-specific spots (e.g., electric vehicle charging stations) in <strong>O(m)</strong> time, where m is the length of the vehicle type string.</p>
+        <h3>Impact:</h3>
+        <p>Drivers can quickly find parking spots tailored to their vehicle, improving convenience and user experience.</p>
+        <h3>Time Complexity:</h3>
+        <p><strong>O(m)</strong> for search, where m is the length of the vehicle type string.</p>
+        <h3>Space Complexity:</h3>
+        <p><strong>O(n * m)</strong>, where n is the number of parking spots and m is the average length of the vehicle type string.</p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/guru/code/Trie%20.cpp">Trie Code</a>
+    </section>
+
+    <section>
+        <h2>Allocating Parking Spots to Multiple Vehicles</h2>
+        <h3>Problem:</h3>
+        <p>How can we allocate parking spots efficiently to multiple vehicles at the same time, avoiding overlap?</p>
+        <h3>Solution:</h3>
+        <p>We use the <strong>Union-Find</strong> algorithm to manage the availability of contiguous parking spaces, ensuring no overlap.</p>
+        <h4>Reason for Solution (with Used Algorithm):</h4>
+        <p><strong>Union-Find</strong> helps us efficiently track connected components, allowing for quick allocation of parking spots without overlap, ensuring all vehicles have a space.</p>
+        <h3>Impact:</h3>
+        <p>Efficient allocation of parking spots during peak times, reducing conflicts and ensuring smooth operations.</p>
+        <h3>Time Complexity:</h3>
+        <p><strong>O(α(n))</strong>, where α(n) is the inverse Ackermann function, which is nearly constant for practical input sizes.</p>
+        <h3>Space Complexity:</h3>
+        <p><strong>O(n)</strong>, where n is the number of parking spots.</p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/guru/codes/Union-Find.cpp">Union-Find Code</a>
+    </section>
+    
+     <section>
+        <h2>Finding Available Parking in Real-Time in a Large Parking Area</h2>
+        <h3>Problem:</h3>
+        <p>In large, multi-level parking garages or open-air lots, it is often challenging to monitor real-time availability of parking spaces across different areas. This leads to unnecessary delays and frustration for drivers searching for available parking spots.</p>
+        <h3>Solution:</h3>
+        <p>Use a <strong>Segment Tree</strong> to divide the parking area into segments (e.g., floors, sections, or zones) and store information about the number of available spaces in each segment. This data structure allows for efficient updates and range queries, enabling real-time tracking of parking availability.</p>
+        <h4>Reason for Solution (with Used Algorithm):</h4>
+        <p><strong>Segment Tree:</strong>
+        <ul>
+            <li>Allows efficient management of parking space availability across large parking areas.</li>
+            <li>Facilitates quick range queries to determine available parking spaces in specific segments.</li>
+            <li>Ensures fast updates when a parking space is occupied or vacated.</li>
+        </ul>
+        Time Complexity of range queries and updates is <strong>O(log n)</strong>, making it well-suited for real-time operations.</p>
+        <h3>Impact:</h3>
+        <p>Real-Time Updates: Drivers can access up-to-date information about parking availability, minimizing time spent searching for a spot.<br>
+        Efficient Parking Management: Segmentation of parking areas enables organized tracking, improving overall parking system efficiency.</p>
+        <h3>Time Complexity:</h3>
+        <p><strong>Query Operation:</strong> O(log n)<br>
+        <strong>Update Operation:</strong> O(log n)</p>
+        <h3>Space Complexity:</h3>
+        <p><strong>O(n):</strong> To store the Segment Tree structure, where <em>n</em> represents the number of parking sections or spaces.</p>
+     <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/tree/main/guru/codes">Segment treeCode</a>
+     </section>
+</body>
+</html>
