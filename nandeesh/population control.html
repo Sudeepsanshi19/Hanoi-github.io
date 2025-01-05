@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Slum Resource Allocation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #2E8B57;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        /* Content Section */
+        section {
+            background-color: #fff;
+            border: 1px solid #2E8B57;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2.5rem;
+        }
+
+        section h2 {
+            margin-top: 1.5rem;
+            color: #2E8B57;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        section h3 {
+            color: #2E8B57;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        section h4 {
+            color: #555;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        section p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-top: 0.8rem;
+        }
+
+        /* List Styling */
+        ul {
+            margin-top: 1.2rem;
+            margin-left: 1.5rem;
+            list-style-type: disc;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Link Styling */
+        a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #2E8B57;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            margin-top: 1.5rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: #3CB371;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            section h3 {
+                font-size: 1.25rem;
+            }
+
+            section p, ul {
+                font-size: 1rem;
+            }
+
+            a {
+                padding: 10px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Urban Slum Resource Allocation</h1>
+        <p>Optimizing Routes and Prioritizing Projects for Urban Development</p>
+    </header>
+
+    <!-- Content Section -->
+    <section>
+        <h2>Problem 1: Optimal Route to Allocate Resources in Urban Slums</h2>
+        <p>
+            Efficient allocation of resources like water, food, or electricity to urban slums requires identifying the shortest or most cost-effective routes. This can be achieved using graph-based algorithms such as Dijkstra's or BFS. Key considerations include:
+        </p>
+        <ul>
+            <li><strong>Road Network:</strong> Representing roads as edges and slum areas as nodes in a graph.</li>
+            <li><strong>Resource Prioritization:</strong> Allocating resources to the most vulnerable areas first.</li>
+            <li><strong>Dynamic Updates:</strong> Adapting to changing conditions like roadblocks or emergencies.</li>
+        </ul>
+        <p>  Implementation code for this problem: <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/nandeesh/codes/dijkstra.cpp">Dijkstra's code</a></p>
+                                           <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/nandeesh/codes/BFS.cpp">BFS code</a></p>
+        <h2>Problem 2: Identifying Connected Components of Slum Areas</h2>
+        <p>
+            Understanding the layout and grouping of slum areas is critical for targeted interventions. Algorithms like DFS or BFS can be used to identify connected components in a city map graph. Considerations include:
+        </p>
+        <ul>
+            <li><strong>Mapping:</strong> Representing slum areas as nodes and pathways as edges.</li>
+            <li><strong>Cluster Identification:</strong> Finding groups of interconnected nodes for unified action.</li>
+        </ul>
+        <p> Implementation code for this problem: <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/nandeesh/codes/BFS.cpp">BFS code</a></p>
+                                             <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/nandeesh/codes/DFS.cpp">DFS code</a></p>
+
+        <h2>Problem 3: Prioritization of Housing Projects</h2>
+        <p>
+            Sorting housing projects based on factors like cost, number of beneficiaries, or urgency helps in effective decision-making. Algorithms like MergeSort or QuickSort can be used for this purpose. Considerations include:
+        </p>
+        <ul>
+            <li><strong>Sorting Criteria:</strong> Defining metrics such as cost-effectiveness or impact.</li>
+            <li><strong>Implementation:</strong> Using efficient sorting algorithms to handle large datasets.</li>
+        </ul>
+        <p> Implementation code for this problem: <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/nandeesh/codes/merge_sort.cpp">MergeSort code</a></p>
+                                             <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/nandeesh/codes/quick_sort.cpp">QuickSort code</a></p>
+    </section>
+</body>
+
+</html>
