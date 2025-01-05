@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Water Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 17px;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #8A2BE2;
+            color: white;
+            padding: 2.7rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        .file1 {
+            font-size: 18px;
+            display: inline;
+            border-color: #e811b5;
+            text-decoration: underline;
+            background-color: transparent;
+            color: #e811b5;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .file1:hover {
+            color: rgb(240, 13, 199);
+            background-color: #bfb3bc;
+        }
+
+        /* Content Section */
+        section {
+            background-color: #fff;
+            border: 1px solid #8A2BE2;
+            border-radius: 12px;
+            padding: 0.8rem;
+            box-shadow: 0 4px 8px rgba(0.4, 0.4, 0.4, 0.4);
+            margin-bottom: 2.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        section h2 {
+            margin-top: 1.5rem;
+            color: #8A2BE2;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        section h3 {
+            color: #8A2BE2;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        section h4 {
+            color: #555;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        section p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-top: 0.8rem;
+        }
+
+        ul {
+            margin-top: 1.2rem;
+            margin-left: 1.5rem;
+            list-style-type: disc;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #8A2BE2;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            margin-top: 1.1rem;
+            margin-bottom: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: #e040c0;
+            transform: scale(1.05);
+        }
+
+        .tourism-table {
+            width: 400px;
+            border-collapse: collapse;
+            margin: 1rem auto 2rem auto;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tourism-table th,
+        .tourism-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .tourism-table th {
+            color: white;
+            background-color: #8A2BE2;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .tourism-table {
+                width: 100%;
+            }
+        }
+
+        .graph1 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .graph1 img {
+            max-width: 100%;
+            margin: 1rem auto 2rem auto;
+            border: 1px solid #8A2BE2;
+            border-radius: 10px;
+        }
+
+        .graph-caption {
+            margin-top: -22px;
+            text-align: center;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .graph1 img {
+                width: 100%;
+                margin: 1rem 0;
+            }
+
+            .graph-caption {
+                margin-top: 0;
+                margin-bottom: 1rem;
+            }
+        }
+
+        header.secondary-header {
+            margin-right: 50px;
+            background-color: #872ddc;
+            color: #FFFFFF;
+            padding: 0.5rem 0.5rem;
+            padding-top: 0px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        header.secondary-header:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        header.secondary-header nav {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header.secondary-header nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3rem;
+            padding: 0.5rem 1rem;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            background-color: #9630f6;
+            flex: 1;
+            text-align: center;
+        }
+
+        header.secondary-header nav a:hover {
+            background-color: #7507f2b3;
+            border: 2px solid #FFFFFF;
+            color: #FFFFFF;
+            border-radius: 15px 15px 15px 15px;
+        }
+
+        @media (max-width: 768px) {
+            header.secondary-header nav {
+                gap: 10px;
+            }
+
+            header.secondary-header nav a {
+                font-size: 1.1rem;
+                padding: 0.8rem 1.5rem;
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 769px) {
+            header.secondary-header nav {
+                flex-direction: row;
+            }
+
+            header.secondary-header nav a {
+                width: auto;
+            }
+        }
+
+        header.secondary-header nav a:hover {
+            background-color: #7507f2b3;
+            border: 2px solid #FFFFFF;
+            color: #FFFFFF;
+            border-radius: 15px 15px 15px 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin-bottom: 0.5rem;
+            }
+
+            nav ul li a {
+                font-size: 1rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            section h3 {
+                font-size: 1.25rem;
+            }
+
+            section p,
+            ul {
+                font-size: 1rem;
+            }
+
+            a {
+                padding: 10px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header class="secondary-header">
+        <nav>
+            <a href="sudeep_businesscase.html">All Business Cases</a>
+            <a href="tourism_businessm.html">Management of Tourism</a>
+            <a href="Urban_farming_supplying_food.html">Urban Farming</a>
+        </nav>
+    </header>
+
+    <!-- Header -->
+    <header>
+        <h1>Smart Water Management</h1>
+        <p>Optimizing Resources through Efficient Algorithms</p>
+    </header>
+
+    <!-- Content Section -->
+    <section>
+        <h2>Introduction</h2>
+        <p>
+            Water is an essential resource for all life, and its efficient management is crucial for sustainability,
+            especially in urban environments and agricultural regions. Smart water management systems leverage
+            technology to optimize water usage, reduce waste, and ensure equitable distribution.
+        </p>
+    </section>
+
+    <section>
+        <h3>Optimizing Pipeline Networks</h3>
+        <p>
+            Designing an efficient pipeline network for water distribution is a complex problem. Minimizing the total
+            length of pipes used reduces construction costs and minimizes energy loss due to friction within the pipes.
+        </p>
+        <strong>The below graph represents water reservoirs in the city:</strong>
+        <div class="graph1">
+            <img src="files/Water_graph.png" alt="Tourism Graph">
+        </div>
+        <p class="graph-caption">
+            Figure T1: Graph representing Water reservoirs and source in the city.
+        </p>
+        <h4>Solution</h4>
+        <p>
+            We can use Kruskal's algorithm to find the minimum spanning tree (MST) for a network of potential pipeline
+            routes. The MST represents the most cost-effective way to connect all points with the shortest possible total
+            pipe length. This approach ensures that every location has access to water while minimizing the overall cost
+            of the infrastructure.
+        </p>
+
+        <p><strong>How Kruskal's Algorithm Works:</strong></p>
+        <ul>
+            <li>Sort all potential pipeline connections (edges) by their length (cost).</li>
+            <li>Create a set for each location (vertex).</li>
+            <li>Iterate through the sorted edges:
+                <ul>
+                    <li>If the two locations connected by the edge belong to different sets, add the edge to the MST and
+                        merge the two sets.</li>
+                </ul>
+            </li>
+            <li>Repeat until all locations are in the same set (all are connected).</li>
+        </ul>
+
+        <p>
+            Here is the implementation of Kruskal's algorithm for finding MST in C++. You can view the code using the
+            link below:
+        </p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/sudeep/codes/kruskal_algorithm.cpp">Kruskal's Code</a>
+        <p><strong>Why Kruskal's Algorithm?</strong></p>
+
+        <ul>
+            <li>Pipeline networks are often sparse graphs, meaning that each location is typically connected to only a
+                few other locations. Kruskal's algorithm performs well on sparse graphs.</li>
+            <li>The algorithm is relatively straightforward to understand and implement.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Predicting Floods</h3>
+        <p>
+            Floods occur when water levels in certain reservoirs exceed thresholds. Predicting these events helps in
+            taking timely preventive measures.
+        </p>
+        <p>
+            below table represents the current water levels in various reservoirs and their respective thresholds:
+        </p>
+        <table class="tourism-table">
+            <thead>
+                <tr>
+                    <th>Reservoir</th>
+                    <th>Current Level</th>
+                    <th>Threshold</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>R1</td>
+                    <td>50</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>R2</td>
+                    <td>70</td>
+                    <td>65</td>
+                </tr>
+                <tr>
+                    <td>R3</td>
+                    <td>30</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td>R4</td>
+                    <td>80</td>
+                    <td>75</td>
+                </tr>
+                <tr>
+                    <td>R5</td>
+                    <td>45</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>R6</td>
+                    <td>40</td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <td>R7</td>
+                    <td>75</td>
+                    <td>70</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Solution</h4>
+        <p>
+            Use AVL trees to represent reservoirs and their water levels, allowing for efficient insertion, deletion, and
+            threshold-based queries.
+        </p>
+        
+        <p>
+            Here is the implementation of AVL trees in C++. You can view the code using the link below:
+        </p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/sudeep/codes/Avl_tree.cpp">AVL tree Code</a>
+        <p><strong>Why AVL trees?</strong></p>
+
+        <ul>
+            <li>O(logn) time complexity for searching, insertion, and deletion.</li>
+            <li>Ensures efficient traversal and threshold comparison.</li>
+            <li>Quickly update levels and re-evaluate risks as water levels change.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Monitoring Water Levels</h3>
+        <h4>Problem</h4>
+        <p>
+            Efficiently monitor and update water levels in reservoirs to predict potential shortages. Reservoir water
+            levels need frequent updates and range queries to determine total water levels in specific groups of
+            reservoirs.
+        </p>
+        <h4>Solution</h4>
+        <p>
+            Use Fenwick trees (also known as Binary Indexed Trees) to represent reservoirs and their water levels,
+            allowing for efficient updates and range queries.
+        </p>
+
+        <p><strong>Why Fenwick Trees?</strong></p>
+
+        <ul>
+            <li>Both updates and queries are O(logn), making it highly suitable for real-time water level monitoring.</li>
+            <li>Supports frequent updates to water levels without reconstructing the structure.</li>
+            <li>Requires only O(n) space for n reservoirs.</li>
+        </ul>
+
+        <p><strong>Steps to Use Fenwick Trees:</strong></p>
+        <ul>
+            <li>Initialize the Fenwick tree with the initial water levels of the reservoirs.</li>
+            <li>For each update in water levels, update the Fenwick tree accordingly.</li>
+            <li>For range queries, use the Fenwick tree to efficiently calculate the total water level in the specified range.</li>
+        </ul>
+
+        <p><strong>Example:</strong></p>
+        <p>Consider the water levels in reservoirs as follows:</p>
+        <p><code>waterLevels = {50, 70, 30, 80, 45, 60, 75}</code></p>
+        <p>We can use a Fenwick tree to efficiently monitor and update these water levels.</p>
+
+        <p>
+            Here is the implementation of Fenwick Tree in C++. You can view the code using the link below:
+        </p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/sudeep/codes/fenwick_tree.cpp">Fenwick Tree Code</a>
+        </section>
+
+    <section>
+        <h3>Shortest Distance Between a Reservoir and Source</h3>
+        <h4>Problem</h4>
+        <p>
+            Efficiently deliver water through a pipeline network while accounting for elevation changes, which may cause
+            a gain (negative weight) or loss (positive weight) in water pressure. We aim to determine the shortest path
+            for water delivery from the source to multiple locations, minimizing pressure loss and optimizing flow.
+        </p>
+        <h4>Solution</h4>
+        <p>
+            Use Bellman-Ford algorithm to handle negative weights safely and provide accurate results if there are no
+            negative weight cycles.
+        </p>
+
+        <p><strong>Why Bellman-Ford Algorithm?</strong></p>
+
+        <ul>
+            <li>In a water pipeline network, elevation drops can lead to pressure gains, which can be represented as
+                negative weights.</li>
+            <li>Unlike Dijkstra's algorithm, Bellman-Ford can handle negative weights safely and provides accurate
+                results if there are no negative weight cycles.</li>
+            <li>The Bellman-Ford algorithm's time complexity is O(V⋅E), where:
+                <ul>
+                    <li>V: Number of vertices in the graph.</li>
+                    <li>E: Number of edges in the graph.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>
+            Here is the implementation of Bellman-Ford Algorithm in C++. You can view the code using the link below:
+        </p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/sudeep/codes/bellamin_ford.cpp">Bellman-Ford Algorithm</a>
+    </section>
+</body>
+
+</html>
