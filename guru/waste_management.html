@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affordable Housing Development Solutions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #2c3e50, #3e2723);;
+            color: white;
+            padding: 23px;
+        }
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 36px;
+        }
+        h2 {
+            font-size: 30px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        h3 {
+            font-size: 26px;
+            color: #f1c40f;
+            margin-bottom: 10px;
+        }
+        h4 {
+            font-size: 24px;
+            color: #ecf0f1;
+            margin-bottom: 15px;
+        }
+        .container {
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .problem, .solution, .reason, .impact, .time-complexity, .space-complexity {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 32px; 
+            padding: 12px;
+            background-color: #2c3e50;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            border: 2px solid #3498db;
+            background-color: skyblue;
+        }
+        a:hover {
+            background-color: #34495e;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Smart Waste Management</h1>
+    </header>
+
+    <h3>Using IoT sensors and AI to optimize waste collection, recycling, and disposal, reducing landfill use and improving city cleanliness.</h3>
+    <h3>Revenue Model: Subscription for waste management services, product sales (smart bins, recycling machines).</h3>
+
+    <section>
+        <h2>Inefficient Waste Collection</h2>
+        <h4>Problem:</h4>
+        <p>Waste collection trucks often follow non-optimal routes, wasting fuel and time, while some bins remain overflowing.</p>
+
+        <h4>Solution:</h4>
+        <ul>
+            <li>Implement route optimization algorithms (e.g., Dijkstra's or Floyd-Warshall) to calculate the shortest and most efficient paths for collection.</li>
+            <li>Use GPS tracking and real-time updates to dynamically adjust routes based on bin status.</li>
+        </ul>
+
+        <h4>Reason for Solution with Used Algorithm:</h4>
+        <p>Dijkstra's Algorithm is used to find the shortest path from a starting point to all other waste collection points, minimizing travel time and fuel consumption.</p>
+        <p>Efficiency: O(|E|log|V|)</p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/guru/codes/Dijkstra's_Algorithm.cpp">Dijkstra's Code</a>
+        
+        <p>Floyd-Warshall Algorithm is ideal when multiple trucks are serving overlapping areas, as it computes the shortest paths between all pairs of locations, ensuring optimal coordination.</p>
+        <p>Efficiency: O(V³)</p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/guru/codes/Floyd-Warshall.cpp">Floyd-Warshall Code</a>
+
+        <h4>Impact:</h4>
+        <p>Reduced operational costs, faster collection, and fewer overflowing bins.</p>
+    </section>
+
+    <section>
+        <h2>Overflowing Bins and Missed Pickups</h2>
+        <h4>Problem:</h4>
+        <p>Overflowing bins cause littering, odors, and health hazards due to untimely waste collection.</p>
+
+        <h4>Solution:</h4>
+        <ul>
+            <li>Install smart sensors in bins to monitor fill levels and alert the management system when nearing capacity.</li>
+            <li>Integrate a real-time monitoring system using AVL Trees to prioritize bins that are close to overflowing.</li>
+        </ul>
+
+        <h4>Reason for Solution with Used Algorithm:</h4>
+        <p>AVL Trees are used to efficiently maintain an ordered set of bins, allowing quick retrieval and prioritization of bins that are near full capacity. AVL Trees provide fast lookups, ensuring timely pickups.</p>
+        <p>Efficiency: O(log n)</p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/guru/codes/AVL%20Trees.cpp">AVL Tree Code</a>
+
+        <h4>Impact:</h4>
+        <p>Timely waste collection, cleaner streets, and improved public hygiene.</p>
+    </section>
+
+    <section>
+        <h2> Lack of Proper Waste Segregation</h2>
+        <h4>Problem:</h4>
+        <p>Mixed waste leads to inefficient recycling and disposal, increasing landfill use.</p>
+
+        <h4>Solution:</h4>
+        <ul>
+            <li>Deploy automated sorting systems with image recognition and sorting algorithms like Merge Sort to segregate waste efficiently at processing centers.</li>
+            <li>Educate citizens about waste segregation through awareness programs and incentives.</li>
+        </ul>
+
+        <h4>Reason for Solution with Used Algorithm:</h4>
+        <p>Merge Sort is used for efficiently sorting waste materials (e.g., plastics, paper, metals). Its stable and divide-and-conquer approach ensures large datasets are handled effectively, maintaining order and efficiency in automated systems.</p>
+        <p>Efficiency: O(n log n)</p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/guru/codes/Merge%20Sort.cpp">Merge Sort Code</a>
+
+        <h4>Impact:</h4>
+        <p>Higher recycling rates, reduced landfill waste, and better resource utilization.</p>
+    </section>
+
+</body>
+</html>
