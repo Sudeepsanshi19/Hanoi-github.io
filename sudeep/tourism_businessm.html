@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Management with Merge Sort</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 17px;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #8A2BE2;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+        .file1 {
+            font-size: 18px;
+            display: inline;
+            border-color: #e811b5;
+            text-decoration: underline;
+            background-color: transparent;
+            color: #e811b5;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: left;
+        }
+        .file1:hover{
+            color: rgb(240, 13, 199);
+            background-color: #bfb3bc;
+            
+        }
+
+        /* Content Section */
+        section {
+            background-color: #fff;
+            border: 1px solid #8A2BE2;
+            border-radius: 12px;
+            padding: 0.8rem;
+            box-shadow: 0 4px 8px rgba(0.4, 0.4, 0.4, 0.4);
+            margin-bottom: 2.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+
+        section h2 {
+            margin-top: 1.5rem;
+            color: #8A2BE2;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        section h3 {
+            color: #8A2BE2;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        section h4 {
+            color: #555;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        section p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-top: 0.8rem;
+        }
+
+        ul {
+            margin-top: 1.2rem;
+            margin-left: 1.5rem;
+            list-style-type: disc;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #8A2BE2;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            margin-top: 1.1rem;
+            margin-bottom: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: #e040c0;
+            transform: scale(1.05);
+        }
+
+        .tourism-table {
+            width: 400px;
+            border-collapse: collapse;
+            margin: 1rem auto 2rem auto;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tourism-table th,
+        .tourism-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .tourism-table th {
+            color: white;
+            background-color: #8A2BE2;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .tourism-table {
+                width: 100%;
+            }
+        }
+
+        .graph1 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .graph1 img {
+            max-width: 100%;
+            margin: 1rem auto 2rem auto;
+            border: 1px solid #8A2BE2;
+            border-radius: 10px;
+        }
+
+        .graph-caption {
+            margin-top: -22px;
+            text-align: center;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .graph1 img {
+                width: 100%;
+                margin: 1rem 0;
+            }
+
+            .graph-caption {
+                margin-top: 0;
+                margin-bottom: 1rem;
+            }
+        }
+        header.secondary-header {
+            margin-right: 50px;
+            background-color: #872ddc;  
+            color: #FFFFFF;
+            padding: 0.5rem 0.5rem;
+            padding-top: 0px;
+            text-align: center;
+            border-radius: 15px; 
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+            margin-bottom: 2.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%; 
+            box-sizing: border-box; 
+        }
+        
+        header.secondary-header:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
+        }
+        
+        header.secondary-header nav {
+            display: flex;
+            justify-content: space-between; 
+            flex-wrap: wrap; 
+            gap: 20px;
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        
+        header.secondary-header nav a {
+            color: #FFFFFF; 
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3rem; 
+            padding: 0.5rem 1rem;
+            border: 2px solid transparent;
+            border-radius: 10px; 
+            background-color: #9630f6;
+            flex: 1; 
+            text-align: center;
+        }
+        
+        header.secondary-header nav a:hover {
+            background-color: #7507f2b3; 
+            border: 2px solid #FFFFFF; 
+            color: #FFFFFF; 
+            border-radius: 15px 15px 15px 15px;
+        }
+        
+        @media (max-width: 768px) {
+            header.secondary-header nav {
+                gap: 10px;
+            }
+        
+            header.secondary-header nav a {
+                font-size: 1.1rem;
+                padding: 0.8rem 1.5rem;
+                width: 100%;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            header.secondary-header nav {
+                flex-direction: row; 
+            }
+        
+            header.secondary-header nav a {
+                width: auto; 
+            }
+        }
+        
+        
+        header.secondary-header nav a:hover {
+            background-color: #7507f2b3; 
+            border: 2px solid #FFFFFF; 
+            color: #FFFFFF; 
+            border-radius: 15px 15px 15px 15px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+            flex-direction: column;
+            align-items: center;
+            }
+
+            nav ul li {
+            margin-bottom: 0.5rem;
+            }
+
+            nav ul li a {
+            font-size: 1rem;
+            padding: 0.4rem 0.8rem;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            section h3 {
+                font-size: 1.25rem;
+            }
+
+            section p,
+            ul {
+                font-size: 1rem;
+            }
+
+            a {
+                padding: 10px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header class="secondary-header">
+        <nav>
+            <a href="prajwal_businesscase.html">All Business Cases</a>
+            <a href="water_manage.html">Smart water Management</a>
+            <a href="Urban_farming_supplying_food.html">Urban Farming</a>
+        </nav>
+    </header>
+
+    <!-- Header -->
+    <header>
+        <h1>Proper and Efficient Management of Tourism</h1>
+        <p>Optimizing Resources through Efficient Algorithms</p>
+    </header>
+
+    <!-- Content Section -->
+    <section>
+        <h2>Introduction</h2>
+        <p>
+            Tourism is a critical driver of economic growth, cultural exchange, and urban development
+            in modern cities. By focusing on innovation, sustainability, and inclusivity, cities can design tourism
+            systems that not only
+            attract visitors but also enrich the lives of residents and support long-term economic growth. Properly
+            managing tourism through thoughtful
+            city design can transform challenges into opportunities, creating vibrant and thriving urban environments.
+        </p>
+    </section>
+    <section>
+        <h3>finding Popular Tourism Spots</h3>
+        <p>
+            For managing tourism effectively, one of the critical steps is to identify the most popular tourist spots in
+            a city.
+            suppose there are 8 tourist spots in a city and we need to find the most popular spots based on the number
+            of visits they receive.
+        </p>
+        <p>
+            <strong>The below are the tourist places in the city along with visits to them per month:</strong>
+        <table class="tourism-table">
+            <tr>
+                <th>Place</th>
+                <th>Visits per Month</th>
+                <th>Assigned number</th>
+            </tr>
+            <tr>
+                <td>Shani Deva Temple</td>
+                <td>5000</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Sunset Park</td>
+                <td>3000</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Summit Mountains</td>
+                <td>7000</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>City Museum</td>
+                <td>1500</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>Zoo/Aquarium</td>
+                <td>4000</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Forest Area</td>
+                <td>6000</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Crystal Lake</td>
+                <td>4000</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Historical Site</td>
+                <td>500</td>
+                <td>8</td>
+        </table>
+        </p>
+        <strong>The below graph represents tourist places in the city:</strong>
+        <p>number in nodes represnt the tourist places which are assigned in above table.</p>
+        <div class="graph1">
+            <img src="files/toursim_graph_00.png" alt="Tourism Graph">
+        </div>
+        <p class="graph-caption">
+            Figure T1: Graph representing tourist spots in the city.
+        </p>
+        <h4>Solution</h4>
+        <p>
+            This helps in optimizing resources, planning infrastructure, and prioritizing
+            promotional strategies for high-traffic areas. Sorting allows us to identify the spots requiring more
+            attention, such as better crowd management.
+            hence after we will get more popular spots which are represented in <strong>figure T2</strong>.
+        </p>
+
+        <p><strong>We chose merge sort for this task due to its efficiency and stability. Merge sort is a comparison-based sorting algorithm that uses a divide-and-conquer approach. There are several key reasons for choosing merge sort:</strong></p>
+
+        <p><strong>&#9673</strong> Merge sort has a time complexity of O(n log n), making it suitable for sorting large datasets, such as city-wide tourist visit records.</p>
+
+        <p><strong>&#9673</strong> Merge sort is a stable sorting algorithm, meaning it maintains the relative order of equal elements, which can be important for certain datasets.</p>
+
+        <p><strong>&#9673</strong> Merge sort works well with large datasets and can be easily adapted for external sorting, where data is too large to fit into memory.</p>
+
+        <p>
+            Here is the implementation of Merge Sort for sorting tourism data in C++. You can view the code using the
+            link below:
+        </p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/sudeep/codes/merge_sort.cpp">Merge sort Code</a>
+        <p>After sorting we get popular spots which are represented in below table and Graph in <strong>Figure T2</strong></p>
+    </section>
+    <section>
+        <h3>Identifying Tourism Spots</h3>
+        <p>
+            For managing tourism effectively, we need to find the tourism spots in the city.For this we can represent
+            tourist locations as nodes in a graph, with edges
+            representing travel routes and their respective distances.for example let below 6 tourist places.And assign
+            numbers to it.
+        <table class="tourism-table">
+            <tr>
+                <th>Place</th>
+                <th>Number</th>
+            </tr>
+            <tr>
+                <td>Shani Deva Temple</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Sunset Park</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Summit Mountains</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Zoo/Aquarium</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Forest Area</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Crystal Lake</td>
+                <td>5</td>
+            </tr>
+        </table>
+        </p>
+        <strong>The below graph represents tourist places in the city:</strong>
+        <p>number in nodes represnt the tourist places which are assigned in above table.</p>
+        <div class="graph1">
+            <img src="files/Tourism_graph.png" alt="Tourism Graph">
+        </div>
+        <p class="graph-caption">
+            Figure T2: Graph representing tourist spots in the city with distances between them
+        </p>
+        <p>
+            Using breadth First Search (BFS), we traverse the graph to identify all accessible tourist spots starting
+            from a chosen node.
+        </p>
+        <p>
+            Here is the implementation of breadth first search tourism data in C++. You can view the code using the
+            link below:
+        </p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/sudeep/codes/BFS_tour.cpp">breadth first search</a>
+
+        <p>We chose Breadth-First Search (BFS) for this task because of its suitability for graph traversal and
+            searching in scenarios
+            like identifying tourist spots and exploring connectivity. BFS ensures a systematic exploration of the graph
+            level by level, making it an excellent choice for analyzing tourist data</p>
+
+        <p><strong>&#9673</strong> BFS is ideal for solving problems like identifying all connected tourist spots or
+            determining if a route exists between two places, which directly aligns with real-world tourism management
+            tasks.</p>
+
+        <p><strong>&#9673</strong> With a time complexity of O(V + E) (where
+            V is the number of vertices and
+            E is the number of edges), BFS is efficient for graphs like city maps</p>
+
+    </section>
+
+    <section>
+        <h3>Finding Shortest Paths Between All Tourist Spots</h3>
+        <p>
+            After identifying popular tourist spots, the next important step is to provide tourists with efficient ways
+            to navigate between them. Tourists often want to visit multiple locations during their trip, and knowing the
+            shortest paths between these
+            locations can significantly enhance their experience. This requires finding the shortest paths between all
+            pairs of tourist spots.Consider graph represented in <strong>figure T1</strong>.
+        </p>
+        <p>
+            <strong>The below are the tourist places in the city along with distances between them:</strong>
+        <ul>
+            <li>Summit Mountains → Sunset Park (80), Shani Deva Temple (40)</li>
+            <li>Sunset Park → Shani Deva Temple (110), Crystal Lake (60)</li>
+            <li>Shani Deva Temple → Zoo/Aquarium (20), Crystal Lake (40)</li>
+            <li>Zoo/Aquarium → Forest Area (30)</li>
+            <li>Crystal Lake → Forest Area (40)</li>
+            <li>Forest Area → Summit Mountains (40)</li>
+        </ul>
+        </p>
+        <h4>Solution</h4>
+        <p>
+            The Floyd-Warshall algorithm is an excellent choice for finding the shortest paths between all pairs of
+            vertices in a weighted graph. In our case, the vertices represent tourist spots, and the edge weights
+            represent the distances or travel times between them.
+            By applying the Floyd-Warshall algorithm, we can generate a matrix that provides the shortest path between
+            any two tourist spots.
+        </p>
+        <p><strong>Why Floyd-Warshall?</strong></p>
+
+        <p><strong>&#9673</strong> While Dijkstra's algorithm finds the shortest paths from a single source vertex to
+            all other vertices,
+            Floyd's algorithm computes the shortest path between every pair of nodes. Since we are interested in the
+            shortest paths between all tourist spots, this algorithm is a natural fit.
+        </p>
+
+        <p><strong>&#9673</strong> Floyd's algorithm works on both directed and undirected graphs</p>
+
+        <p><strong>&#9673</strong> Floyd’s algorithm is stable, meaning it will give consistent results even if multiple
+            paths exist between the same pair of nodes.</p>
+
+        <p></p>
+
+        <p>
+            Here is the implementation of floyd' algorithm to find out minimum distance between all tourism spots in
+            C++. You can view the code using the
+            link below:
+        </p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/sudeep/codes/Floyd_algo.cpp">floyd graph code</a>
+    </section>
+    <section>
+        <h3>Personalized Recommendations Based on Tourist Interests</h3>
+        <p>
+            Tourists have diverse interests, encompassing historical sites, museums, outdoor activities, culinary
+            experiences, cultural events, and more. A well-designed recommendation system can analyze tourist profiles
+            and preferences to suggest relevant attractions, activities, and experiences, making their trip more
+            enjoyable and fulfilling.
+        </p>
+        <h4>Solution</h4>
+        <p>
+            A recommendation system can be implemented to offer personalized suggestions. We will focus on a
+            content-based filtering approach, which recommends items similar to what a user has liked in the past.
+        </p>
+
+        <p><strong>&#9673</strong> Recommendations are based on the similarity between the tourist's past preferences
+            and the content of the attractions. This makes the recommendations easy to understand and justify.</p>
+
+            <p>
+                Here is the implementation of reccomendation engine for suggesting tourism spots in C++. You can view the
+                code using the
+                link below:
+            </p>
+            <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/sudeep/codes/recommendation.cpp">reccomendation engine code</a>
+
+        <p>For creating reccomendation system we can do this by suggesting similar type of tourism spots for i have created a text file to store tourism data</p>
+        <p><strong>Here is the text file</strong> 
+            <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/sudeep/files/tourist_data.txt.txt" class="file1">Toursist_data_file</a></p>
+        <p>in that file first column represents location we are searching and second names represents suggestions with most number of searches</p>
+    </section>
+    <section>
+        <h3>Analyzing Tourist Patterns</h3>
+        <p>
+            Tourist destinations often experience fluctuating crowd levels based on the time of day, season, or specific
+            events. Efficiently analyzing
+            these patterns is essential to enhance the tourist experience and optimize resource allocation at tourist
+            spots.
+        </p>
+        <p>
+            key challanges are Quickly determining the total crowd in a specific time or location range (e.g.,in a specific section of a park).
+
+            Frequent Updates:
+            The dataset needs dynamic updates to account for new data (e.g., arrival or departure of tourists).
+        </p>
+        <p><strong>Visitor Distribution Across Zones:</strong></p>
+        <table class="tourism-table">
+            <tr>
+                <th>Zone</th>
+                <th>Visitors</th>
+            </tr>
+            <tr>
+                <td>Zone 1</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Zone 2</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Zone 3</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Zone 4</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td>Zone 5</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Zone 6</td>
+                <td>60</td>
+            </tr>
+        </table>
+        <p>In any one of the above tourist may increase or decrese(for eg: in zone zone 3 visitors nay icrease to 55 which is shown in code)</p>
+        <h4>Solution</h4>
+        <p>
+            Segment trees provide an efficient way to handle range-based problems dynamically. They enable fast querying
+            and updating operations, making them a perfect choice for this use case.
+        </p>
+        <p><strong>Why segment trees?</strong></p>
+
+        <p><strong>&#9673</strong>
+            They allow quick computation of aggregate data (e.g., total crowd over a range) in O(logn) time.
+        </p>
+
+        <p><strong>&#9673</strong> Dynamic changes in data (e.g., adding new visitors) can be handled to
+            large datasets, making them suitable for managing data over extended time periods or across multiple
+            locations.</p>
+
+
+        <p>
+            Here is the implementation of segment trees for tourism spots in C++. You can view the code using the
+            link below:
+        </p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/sudeep/codes/segment_tree.cpp" download>Segement tree code</a>
+    </section>
+</body>
+
+</html>
