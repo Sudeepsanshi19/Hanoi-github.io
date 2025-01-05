@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Management with Dijkstra</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #8A2BE2;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        /* Content Section */
+        section {
+            background-color: #fff;
+            border: 1px solid #8A2BE2;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2.5rem;
+        }
+
+        section h2 {
+            margin-top: 1.5rem;
+            color: #8A2BE2;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        section h3 {
+            color: #8A2BE2;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        section h4 {
+            color: #555;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        section p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-top: 0.8rem;
+        }
+
+        /* List Styling */
+        ul {
+            margin-top: 1.2rem;
+            margin-left: 1.5rem;
+            list-style-type: disc;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Link Styling */
+        a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #8A2BE2;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            margin-top: 1.5rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: #40E0D0;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            section h3 {
+                font-size: 1.25rem;
+            }
+
+            section p, ul {
+                font-size: 1rem;
+            }
+
+            a {
+                padding: 10px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Water Management Route Optimization</h1>
+        <p>Optimizing Routes for Efficient Water Distribution</p>
+    </header>
+
+    <!-- Content Section -->
+    <section>
+        <h1>Water Management Route Optimization</h1>
+        <p>
+            Water management route optimization is the process of finding the most efficient and effective path for water distribution. This approach focuses on minimizing water loss, maximizing efficiency, and ensuring access to clean water for all areas. Key factors include:
+        </p>
+        <ul>
+            <li><strong>Pipeline Conditions:</strong> Well-maintained pipelines that minimize water loss.</li>
+            <li><strong>Water Flow:</strong> Routes with optimal water pressure and flow for efficient distribution.</li>
+            <li><strong>Accessibility:</strong> Routes that avoid obstructions such as construction zones or blocked pathways.</li>
+            <li><strong>Maintenance Time:</strong> Routes that minimize the time required for repairs or monitoring.</li>
+            <li><strong>Resource Efficiency:</strong> Paths that optimize the use of available resources such as energy for pumps.</li>
+        </ul>
+        <h2>How Dijkstra's Algorithm Is Used</h2>
+        <p>
+            Dijkstra's algorithm is a classic approach for finding the shortest path in a graph. When adapted for water management optimization, Dijkstra's algorithm can be used to minimize factors such as water loss, inefficient flow, and resource usage. Instead of focusing on traditional metrics like distance or time, we prioritize efficient water distribution. Here's how it works:
+        </p>
+        <h3>Graph Representation:</h3>
+        <p>The water distribution network is represented as a graph, where:</p>
+        <ul>
+            <li><strong>Nodes</strong> represent locations (e.g., water tanks, distribution points, or consumer areas).</li>
+            <li><strong>Edges</strong> represent pipelines between locations, each with a weight representing the efficiency of water flow.</li>
+        </ul>
+        <h3>Edge Weights:</h3>
+        <p>Instead of using traditional weights such as distance or time, we use weights based on factors like:</p>
+        <ul>
+            <li>Pipeline condition (e.g., material or age that may affect water loss).</li>
+            <li>Water flow capacity and pressure.</li>
+            <li>Maintenance costs and ease of access.</li>
+        </ul>
+        <h3>Algorithm Execution:</h3>
+        <ul>
+            <li>The algorithm starts at the source node (e.g., water source or treatment plant) and explores neighboring nodes.</li>
+            <li>At each step, it selects the path with the lowest cumulative inefficiency or resource usage.</li>
+            <li>It continues until it finds the most efficient water distribution path to the destination.</li>
+        </ul>
+        <h3>Output:</h3>
+        <p>The algorithm returns the path with the least resource waste, considering the assigned weights for water management optimization.</p>
+        
+        <h4>Dijkstra's Algorithm Implementation in C++</h4>
+        <p>
+            Here is the implementation of Dijkstra's algorithm for water management optimization in C++. You can view the code using the link below:
+        </p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/subbramnnya/dijkstra.cpp">Dijkstra's Code</a>
+         
+    </section>
+</body>
+
+</html>
