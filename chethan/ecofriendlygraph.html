@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 8px;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Graph Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>From Node</th>
+                <th>To Node</th>
+                <th>Distance</th>
+                <th>Traffic</th>
+                <th>Pollution</th>
+                <th>Composite Weight</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Node0</td><td>Node1</td><td>4</td><td>1.29</td><td>0.74</td><td>5.55</td>
+            </tr>
+            <tr>
+                <td>Node0</td><td>Node2</td><td>2</td><td>4.19</td><td>0.48</td><td>8.63</td>
+            </tr>
+            <tr>
+                <td>Node0</td><td>Node3</td><td>10</td><td>3.75</td><td>2.90</td><td>16.58</td>
+            </tr>
+            <tr>
+                <td>Node1</td><td>Node0</td><td>8</td><td>0.85</td><td>1.89</td><td>10.91</td>
+            </tr>
+            <tr>
+                <td>Node1</td><td>Node2</td><td>15</td><td>2.51</td><td>2.44</td><td>19.97</td>
+            </tr>
+            <tr>
+                <td>Node1</td><td>Node3</td><td>17</td><td>4.04</td><td>1.71</td><td>23.85</td>
+            </tr>
+            <tr>
+                <td>Node2</td><td>Node0</td><td>5</td><td>3.22</td><td>2.75</td><td>11.49</td>
+            </tr>
+            <tr>
+                <td>Node2</td><td>Node1</td><td>6</td><td>3.67</td><td>1.45</td><td>12.97</td>
+            </tr>
+            <tr>
+                <td>Node2</td><td>Node3</td><td>5</td><td>2.64</td><td>0.62</td><td>8.37</td>
+            </tr>
+            <tr>
+                <td>Node3</td><td>Node1</td><td>17</td><td>3.17</td><td>1.53</td><td>22.96</td>
+            </tr>
+            <tr>
+                <td>Node3</td><td>Node2</td><td>19</td><td>0.87</td><td>0.23</td><td>20.74</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
