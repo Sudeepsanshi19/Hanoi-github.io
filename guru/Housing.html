@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affordable Housing Development Solutions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, black, white);
+            color: white;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 36px;
+        }
+        h2 {
+            font-size: 30px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        h3 {
+            font-size: 24px;
+            color: #f1c40f;
+            margin-bottom: 10px;
+        }
+        h4 {
+            font-size: 18px;
+            color: #ecf0f1;
+            margin-bottom: 15px;
+        }
+        .container {
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .problem, .solution, .reason, .impact, .time-complexity, .space-complexity {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 35px; 
+            padding: 12px;
+            background-color: #2c3e50;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            border: 2px solid #3498db;
+            background-color: skyblue;
+        }
+        a:hover {
+            background-color: #34495e;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Affordable Housing Development Solutions in Smart City (Hanoi)</h1>
+
+    <div class="container">
+        <section>
+            <h4>Affordable housing development is about making sure everyone has a safe and affordable place to live, especially for those with lower incomes. As cities grow, finding housing that doesn't take up too much of a person’s paycheck becomes more important. Governments, private companies, and communities work together to build these homes, often using smart strategies like efficient land use and innovative building methods to keep costs low. The aim is not just to provide a roof over people's heads but to create communities where they have access to jobs, schools, and healthcare, helping them live better, fuller lives.</h4>
+        </section>
+        <section>
+            <h2>Allocating Housing Units to the Right People:</h2>
+            <h3><strong>Problem:</strong> How do we efficiently allocate affordable housing units to eligible people based on various factors such as income, family size, and other criteria?</h3>
+            <h4><strong>Solution:</strong> Algorithm Used: Heap Sort<br>We use Heap Sort to rank applicants by their eligibility, ensuring that the highest priority applicants (e.g., families with urgent needs) are allocated housing first.</h4>
+            <h4><strong>Reason for Solution:</strong> Heap Sort is a highly efficient sorting algorithm that helps in prioritizing applicants quickly. It ensures that applicants with higher priority (based on predefined criteria) are placed into available housing units.</h4>
+            <h4><strong>Impact:</strong> Ensures fair and quick allocation of housing units, reducing waiting times and making the process transparent and efficient.</h4>
+            <h4><strong>Time Complexity:</strong> O(n log n), where n is the number of applicants.</h4>
+            <h4><strong>Space Complexity:</strong> O(1), meaning it uses constant space for sorting.</h4>
+            <a href="https://github.com/Sudeepsanshi19/Hanoi.github.io/blob/main/guru/codes/Heap-sort.cpp">Heap Sort Code</a>
+        </section>
+
+        <section>
+            <h2>Recommending the Right Housing Units:</h2>
+            <h3><strong>Problem:</strong> How can we recommend the most suitable housing units to applicants based on their preferences (e.g., location, price, and amenities)?</h3>
+            <h4><strong>Solution:</strong> Algorithm Used: Collaborative Filtering<br>Collaborative Filtering looks at past behavior and preferences of applicants to recommend the best housing options.</h4>
+            <h4><strong>Reason for Solution:</strong> Collaborative Filtering analyzes users' preferences and behaviors to suggest personalized housing units. This approach ensures that applicants are matched with units that best meet their specific needs.</h4>
+            <h4><strong>Impact:</strong> Enhances the user experience by offering personalized recommendations, leading to higher satisfaction among applicants.</h4>
+            <h4><strong>Time Complexity:</strong> O(n²), where n is the number of applicants, as it requires evaluating interactions between users and housing units.</h4>
+            <h4><strong>Space Complexity:</strong> O(n), which stores the interactions between applicants and available housing units.</h4>
+            <a href="https://github.com/Sudeepsanshi19/Hanoi.github.io/blob/main/guru/codes/Recommendation.cpp">Recommendation Code</a>
+        </section>
+
+        <section>
+            <h2>Choosing the Best Locations for New Housing Projects:</h2>
+            <h3><strong>Problem:</strong> How can we identify the best locations for building new affordable housing based on factors such as proximity to amenities, transportation, and land availability?</h3>
+            <h4><strong>Solution:</strong> Algorithm Used: Floyd-Warshall Algorithm<br>Floyd-Warshall calculates the shortest paths between all pairs of locations to assess accessibility and optimize location selection for new housing projects.</h4>
+            <h4><strong>Reason for Solution:</strong> Floyd-Warshall is effective in calculating all-pairs shortest paths, which helps in evaluating the distance from potential housing sites to important services like transportation hubs and essential amenities.</h4>
+            <h4><strong>Impact:</strong> By selecting well-connected locations, we improve the quality of life for residents by reducing transportation costs and ensuring easy access to essential services.</h4>
+            <h4><strong>Time Complexity:</strong> O(V³), where V is the number of locations. This can be slower for very large cities but is manageable for moderate-sized areas.</h4>
+            <h4><strong>Space Complexity:</strong> O(V²), as it requires storing a distance matrix for all pairs of locations.</h4>
+            <a  href="https://github.com/Sudeepsanshi19/Hanoi.github.io/blob/main/guru/codes/Floyd-Warshall.cpp">Floyd-Warshall Code</a>     
+        </section>
+
+        <section>
+            <h2>Ensuring Connectivity in the Community:</h2>
+            <h3><strong>Problem:</strong> How can we ensure that all housing units are well-connected within the community, allowing easy access to communal services and neighbors?</h3>
+            <h4><strong>Solution:</strong> Algorithm Used: BFS (Breadth-First Search)<br>BFS is used to explore all reachable housing units, ensuring that they are connected to communal services and other units.</h4>
+            <h4><strong>Reason for Solution:</strong> BFS efficiently explores all housing units in a level-wise manner, making sure that every unit has a clear path to essential services like parks, schools, and hospitals.</h4>
+            <h4><strong>Impact:</strong> Improves overall community integration by ensuring that all housing units are accessible, which promotes a sense of connectivity and shared access to facilities.</h4>
+            <h4><strong>Time Complexity:</strong> O(V + E), where V is the number of housing units and E is the number of connections (roads, pathways, etc.). This makes BFS efficient even for large numbers of units.</h4>
+            <h4><strong>Space Complexity:</strong> O(V), as it requires space to store the queue for BFS and track visited nodes (housing units).</h4>
+            <a  href="https://github.com/Sudeepsanshi19/Hanoi.github.io/blob/main/guru/codes/BFS.cpp">BFS Code</a>
+        </section>
+    </div>
+</body>
+</html>
