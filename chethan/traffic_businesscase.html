@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Traffic Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #8A2BE2;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        /* Content Section */
+        section {
+            background-color: #fff;
+            border: 1px solid #8A2BE2;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2.5rem;
+        }
+
+        section h2 {
+            margin-top: 1.5rem;
+            color: #8A2BE2;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        section h3 {
+            color: #8A2BE2;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        section h4 {
+            color: #555;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        section p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-top: 0.8rem;
+        }
+
+        /* List Styling */
+        ul {
+            margin-top: 1.2rem;
+            margin-left: 1.5rem;
+            list-style-type: disc;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Link Styling */
+        a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #8A2BE2;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            margin-top: 1.5rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: #40E0D0;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            section h3 {
+                font-size: 1.25rem;
+            }
+
+            section p, ul {
+                font-size: 1rem;
+            }
+
+            a {
+                padding: 10px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Smart Traffic Management System</h1>
+        <p>Smart traffic management systems in smart cities aim to optimize traffic flow, reduce congestion, and enhance safety.</p>
+    </header>
+
+    <section>
+        <h2>1. Data Structures in Smart Traffic Management Systems</h2>
+        <ul>
+            <li>
+                <strong>Graph Data Structures:</strong> Roads and intersections are represented as a weighted graph.
+                <ul>
+                    <li><strong>Nodes:</strong> Represent intersections.</li>
+                    <li><strong>Edges:</strong> Represent roads connecting intersections.</li>
+                    <li><strong>Weights:</strong> Represent traffic density, travel time, or distance.</li>
+                </ul>
+            </li>
+            <li><strong>Priority Queues:</strong> Used to prioritize tasks such as finding the shortest route or selecting the least congested path.</li>
+            <li><strong>Disjoint Set (Union-Find):</strong> Helps manage connected components of a graph and prevents cycles in Kruskal’s algorithm.</li>
+            <li><strong>Merge Sort:</strong> Helps to sort the edges by weight.</li>
+            <li><strong>Dynamic Arrays/Hash Maps:</strong> Store dynamic data like traffic signals and vehicle density.</li>
+        </ul>
+
+        <h2>2. Kruskal’s Algorithm in Smart Traffic Management</h2>
+        <p>Kruskal’s algorithm finds the Minimum Spanning Tree (MST) of a graph. It can optimize traffic systems by identifying routes with minimal congestion or maintenance costs.</p>
+
+        <h3>Steps in Kruskal’s Algorithm</h3>
+        <ol>
+            <li><strong>Sort Edges by Weight:</strong> Arrange roads by increasing traffic congestion or travel time.</li>
+            <li><strong>Initialize Disjoint Sets:</strong> Use a union-find data structure to manage connectivity.</li>
+            <li><strong>Add Edges to MST:</strong> Select the smallest edge that does not form a cycle.</li>
+            <li><strong>Repeat:</strong> Continue until all intersections are connected.</li>
+        </ol>
+
+        <h3>Application Example</h3>
+        <div class="highlight">
+            <p><strong>Scenario:</strong> A city has multiple routes with varying congestion levels.</p>
+            <p><strong>Goal:</strong> Find the least congested route layout to connect all major intersections.</p>
+            <p><strong>Implementation:</strong> Use Kruskal’s algorithm to minimize the overall traffic congestion.</p>
+        </div>
+
+        <h2>3. Benefits in Smart Cities</h2>
+        <ul>
+            <li><strong>Efficient Traffic Flow:</strong> Reduces travel time and congestion.</li>
+            <li><strong>Cost Optimization:</strong> Minimizes infrastructure costs.</li>
+            <li><strong>Real-time Adaptability:</strong> Adapts to traffic patterns dynamically.</li>
+        </ul>
+
+        <h4>Data generated from a small part of the city</h4>
+        <p>Here is some data and a graph generated for the above system from a small part of our city project. Link below:</p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/chethan/traffic_graph_data.pdf">Data generated</a>
+
+        <h4>Kruskal's Algorithm Implementation in C++</h4>
+        <p>Efficiency: O(|E| log |E|)</p>
+        <p>Here is the implementation of Kruskal's algorithm in C++. You can view the code using the link below:</p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/chethan/kruskal's">Kruskal's Code</a>
+
+        <h4>Merge Sort Implementation in C++</h4>
+        <p>Efficiency: O(N log N)</p>
+        <p>Here is the implementation of merge sort in C++. You can view the code using the link below:</p>
+        <a href="https://github.com/Sudeepsanshi19/Hanoi-github.io/blob/main/chethan/mergesort.cpp">Merge Sort Code</a>
+    </section>
+</body>
+
+</html>
