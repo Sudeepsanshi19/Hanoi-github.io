@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Case Study: Delivery Services Optimization</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h2 {
+            color: #27ae60;
+            border-bottom: 3px solid #27ae60;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #2980b9;
+            margin-top: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        ul {
+            margin: 10px 0 0 20px;
+            padding: 0;
+        }
+        ul ul {
+            margin-top: 5px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        li strong {
+            color: #34495e;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
+        }
+        details {
+            margin-top: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        details summary {
+            font-weight: bold;
+            cursor: pointer;
+        }
+        details pre {
+            margin: 10px 0 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .highlight {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Business Case Study: Delivery Services Optimization</h1>
+    </header>
+
+    <main>
+        <!-- Overview Section -->
+        <div class="section">
+            <h2>Overview</h2>
+            <p>The rise of e-commerce and online services has made the delivery industry a vital part of daily life. From postal services to grocery and food delivery, optimizing operations through efficient algorithms can help enhance performance, minimize costs, and improve customer satisfaction. In this case study, we explore the application of algorithms such as Dijkstra’s algorithm, Priority Queue (Min-Heap), Bellman-Ford Algorithm, and others to optimize Postal, Newspaper, Courier, and Grocery Delivery Services.</p>
+        </div>
+         
+         <!-- Business Case Mapped to SDGs -->
+        <div class="section">
+            <h2>Business Case Mapped to SDGs</h2>
+            <p>In this case study, optimizing delivery services contributes to several targets under SDG 11 (Sustainable Cities and Communities). The application of efficient algorithms such as Dijkstra’s and Priority Queue (Min-Heap) positively impacts sustainable urban mobility, reduces environmental impact, enhances resilience, and improves public space access.</p>
+            
+            <table>
+                <thead>
+                    <tr style="background-color: #27ae60; color: white;">
+                        <th style="padding: 10px;">SDG Target</th>
+                        <th style="padding: 10px;">Indicators</th>
+                        <th style="padding: 10px;">Relevance to Delivery Optimization</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 10px;">Target 11.2: Sustainable Transport Systems</td>
+                        <td style="padding: 10px;">11.2.1: Access to public transport<br>11.2.2: Time spent in transport</td>
+                        <td style="padding: 10px;">Optimizing delivery routes reduces congestion, making transportation more efficient and benefiting urban mobility.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">Target 11.3: Sustainable Urbanization</td>
+                        <td style="padding: 10px;">11.3.1: Land consumption vs. population growth<br>11.3.2: Civil society participation in planning</td>
+                        <td style="padding: 10px;">Efficient delivery systems optimize land use and infrastructure, contributing to sustainable urban development.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">Target 11.6: Environmental Impact</td>
+                        <td style="padding: 10px;">11.6.1: Urban waste collection<br>11.6.2: PM2.5 levels</td>
+                        <td style="padding: 10px;">Reducing fuel use and emissions from delivery vehicles improves air quality and supports waste management.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">Target 11.7: Accessible Public Spaces</td>
+                        <td style="padding: 10px;">11.7.1: Public space in urban areas<br>11.7.2: Access to public transport</td>
+                        <td style="padding: 10px;">Optimized delivery reduces traffic, freeing space and improving access to public areas, especially for vulnerable groups.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">Target 11.b: Disaster Resilience</td>
+                        <td style="padding: 10px;">11.b.1: National disaster risk strategies<br>11.b.2: Local disaster risk management</td>
+                        <td style="padding: 10px;">Optimized delivery enhances resilience by ensuring efficient distribution of goods during emergencies.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">Target 11.c: Resilient Infrastructure</td>
+                        <td style="padding: 10px;">11.c.1: Disaster risk reduction strategies<br>11.c.2: Access to resilient infrastructure</td>
+                        <td style="padding: 10px;">Delivery optimization improves infrastructure resilience, especially in crisis situations.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+         
+        <!-- Postal and Newspaper Delivery -->
+        <div class="section">
+            <h2>Postal Service and Newspaper Delivery Service</h2>
+            <h3>Introduction</h3>
+            <p>Postal and newspaper delivery services are crucial for ensuring that letters, parcels, and newspapers are delivered efficiently to the right locations. However, these services face challenges in terms of optimizing delivery routes and reducing delivery times.</p>
+
+            <h3>Case 1: Shortest Path for Delivery (Dijkstra's Algorithm / Bellman-Ford Algorithm)</h3>
+            <p>One of the most important problems in postal and newspaper delivery services is finding the shortest path between delivery points. This helps reduce delivery time, fuel consumption, and operational costs.</p>
+            <p><strong>Solution:</strong> To find the shortest path between a delivery point and the destination, we can use Dijkstra’s Algorithm or Bellman-Ford Algorithm. Dijkstra’s algorithm is ideal for finding the shortest path from a single source, while Bellman-Ford Algorithm computes shortest paths between all pairs of nodes, which is useful for city-wide delivery planning.</p>
+
+            <h3>Case 2: Parcel Prioritization and Sorting (Priority Queue / Min-Heap)</h3>
+            <p>Parcel prioritization is key to ensuring that urgent deliveries are handled first. By efficiently sorting parcels based on their priority, we can reduce delays and ensure that the most important items reach their destination promptly.</p>
+            <p><strong>Solution:</strong> Instead of traditional sorting algorithms like Merge Sort, we use a **Priority Queue (Min-Heap)** to prioritize parcels. In this system, parcels with higher priority are processed first. The Priority Queue allows for efficient insertion, deletion, and retrieval of the highest-priority items. This method ensures that parcels are sorted dynamically as new deliveries come in.</p>
+        </div>
+
+        <!-- Techniques Section -->
+        <div class="section">
+            <h2>Techniques</h2>
+            <h3>The main Newspaper Agency delivers the newspaper stock to clusters, then from clusters the delivery boys deliver them</h3>
+            <ul>
+                <li><strong>Clustering:</strong> Divide the city into clusters of homes (e.g., groups of 10-20 homes in nearby areas).</li>
+                <li><strong>Central Nodes:</strong> Use distribution centers or key nodes within each cluster to distribute newspapers or posts to the homes in that cluster.</li>
+                <li><strong>Hierarchical Delivery:</strong>
+                    <ul>
+                        <li><strong>For Newspapers:</strong> Newspapers are delivered daily from the main depot to central nodes (called clusters, similar to CDN networks like Netflix or YouTube), and from there to individual homes.</li>
+                        <li><strong>For Postal Service:</strong> Posts are first sent to regional distribution centers (2-3 days), and then routed to clusters for final delivery.</li>
+                    </ul>
+                </li>
+                <li><strong>Parallel Processing:</strong> Delivery happens simultaneously across clusters, reducing overall delivery time.</li>
+            </ul>
+        </div>
+
+        <!-- C Code Section -->
+        <div class="section">
+            <h2>Example C++ Code for Newspaper Distribution and Priority Parcel Delivery</h2>
+            <details>
+                <summary>View C++ Code</summary>
+                <pre>
+#include <iostream>
+#include <limits.h>
+#include <queue>
+#include <string>
+
+using namespace std;
+
+// Constants
+#define TOTAL_HOMES 200
+#define CLUSTER_SIZE 20
+#define CLUSTERS (TOTAL_HOMES / CLUSTER_SIZE)  // Number of clusters
+#define NUM_NODES 10  // Number of nodes (clusters + central depot)
+#define MAX_PARCELS 100  // Max number of parcels
+
+// Parcel structure for priority queue (binary heap)
+struct Parcel {
+    int parcelId;
+    int priority;  // Lower value means higher priority
+    string description;
+
+    // For the priority queue to work (min-heap based on priority)
+    bool operator<(const Parcel &other) const {
+        return priority > other.priority;  // Lower priority number means higher priority
+    }
+};
+
+// Function to find the minimum distance node that hasn't been visited (used in Dijkstra's Algorithm)
+int findMinDistance(const int dist[], const bool visited[], int numNodes) {
+    int min = INT_MAX, min_index;
+    for (int v = 0; v < numNodes; v++) {
+        if (!visited[v] && dist[v] <= min) {
+            min = dist[v];
+            min_index = v;
+        }
+    }
+    return min_index;
+}
+
+// Dijkstra's Algorithm to find the shortest path from source to all other nodes
+void dijkstra(const int graph[NUM_NODES][NUM_NODES], int src, int dist[NUM_NODES], int numNodes) {
+    bool visited[NUM_NODES] = {false};
+    dist[src] = 0;
+
+    for (int count = 0; count < numNodes - 1; count++) {
+        int u = findMinDistance(dist, visited, numNodes);
+        visited[u] = true;
+
+        for (int v = 0; v < numNodes; v++) {
+            if (!visited[v] && graph[u][v] && dist[u] != INT_MAX && dist[u] + graph[u][v] < dist[v]) {
+                dist[v] = dist[u] + graph[u][v];
+            }
+        }
+    }
+}
+
+// Function to simulate delivery to central nodes of clusters (Newspaper Service)
+void distributeToClusters(int clusters[CLUSTERS][CLUSTER_SIZE]) {
+    cout << "Step 1: Newspapers delivered to central nodes of " << CLUSTERS << " clusters." << endl;
+}
+
+// Function to simulate delivery from clusters to homes (Newspaper Service)
+void distributeToHomes(int clusters[CLUSTERS][CLUSTER_SIZE]) {
+    for (int i = 0; i < CLUSTERS; i++) {
+        cout << "Cluster " << i + 1 << ": Delivering to homes ";
+        for (int j = 0; j < CLUSTER_SIZE; j++) {
+            cout << "Home " << clusters[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+// Priority queue (min-heap) for parcels based on priority
+class PriorityQueue {
+private:
+    Parcel heap[MAX_PARCELS];
+    int size;
+
+    void heapifyUp(int index) {
+        while (index > 0 && heap[index].priority < heap[(index - 1) / 2].priority) {
+            swap(heap[index], heap[(index - 1) / 2]);
+            index = (index - 1) / 2;
+        }
+    }
+
+    void heapifyDown(int index) {
+        int left = 2 * index + 1;
+        int right = 2 * index + 2;
+        int smallest = index;
+
+        if (left < size && heap[left].priority < heap[smallest].priority) {
+            smallest = left;
+        }
+        if (right < size && heap[right].priority < heap[smallest].priority) {
+            smallest = right;
+        }
+        if (smallest != index) {
+            swap(heap[index], heap[smallest]);
+            heapifyDown(smallest);
+        }
+    }
+
+public:
+    PriorityQueue() : size(0) {}
+
+    void push(const Parcel& p) {
+        if (size < MAX_PARCELS) {
+            heap[size] = p;
+            heapifyUp(size);
+            size++;
+        }
+    }
+
+    Parcel pop() {
+        if (size > 0) {
+            Parcel top = heap[0];
+            heap[0] = heap[size - 1];
+            size--;
+            heapifyDown(0);
+            return top;
+        }
+        return Parcel{ -1, INT_MAX, "" };  // Return invalid parcel if empty
+    }
+
+    bool isEmpty() const {
+        return size == 0;
+    }
+};
+
+int main() {
+    // Graph representation of the city (nodes are clusters and the central depot)
+    int graph[NUM_NODES][NUM_NODES] = {0};
+
+    // Define distances between the central depot and clusters
+    graph[0][1] = 10;
+    graph[0][2] = 20;
+    graph[1][0] = 10;
+    graph[1][2] = 5;
+    graph[2][0] = 20;
+    graph[2][1] = 5;
+    graph[2][3] = 10;
+    graph[3][2] = 10;
+    graph[3][4] = 5;
+    graph[4][3] = 5;
+    graph[4][5] = 15;
+    graph[5][4] = 15;
+    graph[5][6] = 10;
+    graph[6][5] = 10;
+    graph[6][7] = 15;
+    graph[7][6] = 15;
+    graph[7][8] = 5;
+    graph[8][7] = 5;
+    graph[8][9] = 20;
+    graph[9][8] = 20;
+
+    // Calculate shortest distances from the central depot (node 0) to all clusters
+    int dist[NUM_NODES];
+    for (int i = 0; i < NUM_NODES; i++) {
+        dist[i] = INT_MAX;
+    }
+
+    dijkstra(graph, 0, dist, NUM_NODES);
+
+    cout << "Shortest distances from the central depot to each cluster:" << endl;
+    for (int i = 1; i < NUM_NODES; i++) {
+        cout << "Cluster " << i << ": " << dist[i] << " units" << endl;
+    }
+
+    // Simulating cluster and home distribution
+    int clusters[CLUSTERS][CLUSTER_SIZE];
+    int home = 1;
+    for (int i = 0; i < CLUSTERS; i++) {
+        for (int j = 0; j < CLUSTER_SIZE; j++) {
+            clusters[i][j] = home++;
+        }
+    }
+
+    // Step 1: Distribute newspapers to cluster central nodes
+    distributeToClusters(clusters);
+
+    // Step 2: Distribute newspapers from clusters to individual homes
+    distributeToHomes(clusters);
+
+    // Priority Queue for parcels
+    PriorityQueue parcelQueue;
+
+    // Insert some parcels with different priorities
+    parcelQueue.push({1, 3, "Parcel 1 (Regular)"});
+    parcelQueue.push({2, 1, "Parcel 2 (Express)"});
+    parcelQueue.push({3, 2, "Parcel 3 (Urgent)"});
+
+    // Extract and display parcels in order of priority
+    cout << "\nDelivering parcels in order of priority:" << endl;
+    while (!parcelQueue.isEmpty()) {
+        Parcel p = parcelQueue.pop();
+        cout << "Delivering Parcel " << p.parcelId << ": " << p.description << " (Priority " << p.priority << ")" << endl;
+    }
+
+    return 0;
+}
+
+                </pre>
+            </details>
+        </div>
+
+        <!-- New Section: Algorithms and Approaches Used -->
+        <div class="section">
+            <h2>Algorithms and Approaches Used in This Case Study</h2>
+            <h3>Design Techniques</h3>
+            <ul>
+                <li><strong>Modularization:</strong> Breaking down the code into smaller, reusable functions like `distributeToClusters` and `distributeToHomes` to handle different tasks separately.</li>
+                <li><strong>Encapsulation:</strong> Using classes like `PriorityQueue` to bundle related data and methods together, improving code organization and readability.</li>
+                <li><strong>Object-Oriented Programming (OOP):</strong> Utilizing classes and objects for efficient code management (e.g., the `PriorityQueue` class).</li>
+            </ul>
+
+            <h3>Algorithms</h3>
+            <ul>
+                <li><strong>Dijkstra's Algorithm:</strong> Used to find the shortest path between nodes (e.g., the central depot and the clusters).</li>
+                <li><strong>Bellman-Ford Algorithm:</strong> Used to find the single source shortest path between nodes (e.g., the central depot and the clusters).</li>
+                <li><strong>Heap Operations (Min-Heap):</strong> Used to prioritize parcels based on their urgency using a priority queue.</li>
+            </ul>
+
+            <h3>Data Structures</h3>
+            <ul>
+                <li><strong>Graph (Adjacency Matrix):</strong> Used to represent the city’s delivery routes between nodes (e.g., clusters, central depot).</li>
+                <li><strong>Priority Queue (Min-Heap):</strong> A heap structure used to efficiently prioritize parcels based on their priority.</li>
+                <li><strong>2D Array for Clusters:</strong> Used to organize the homes in clusters for efficient delivery planning.</li>
+            </ul>
+
+            <h3>Problem-Solving Approaches</h3>
+            <ul>
+                <li><strong>Greedy Algorithm (Dijkstra):</strong> Always selecting the next shortest path for efficient delivery routing.</li>
+                <li><strong>Dynamic Programming (Bellman-Ford):</strong> Consistently choosing the quickest route for optimal delivery efficiency.</li>
+                <li><strong>Priority Scheduling:</strong> Handling parcels based on their priority to ensure urgent deliveries are completed first.</li>
+                <li><strong>Simulation of a Real-World Logistics System:</strong> Breaking down the logistics into real-world tasks like cluster-based delivery and parcel prioritization.</li>
+            </ul>
+
+            <h3>Additional Techniques</h3>
+            <ul>
+                <li><strong>Decomposition:</strong> Breaking the problem into smaller tasks like distributing newspapers and managing parcels.</li>
+                <li><strong>Abstraction (via OOP):</strong> Using classes and functions to simplify complex logic (e.g., the `PriorityQueue` class).</li>
+                <li><strong>Greedy:</strong> Choosing the next cluster based on the smallest distance in Dijkstra’s algorithm.</li>
+                <li><strong>Pruning:</strong> Ignoring already visited nodes in Dijkstra’s algorithm to avoid redundant computations.</li>
+                <li><strong>Principle of Optimality:</strong> An optimal solution to a problem contains within it optimal solutions to subproblems. </li>
+            </ul>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="section">
+            <h2>Conclusion</h2>
+            <p>Optimizing delivery services, particularly through the use of algorithms such as Dijkstra's, Priority Queue (Min-Heap), and Bellman-Ford Algorithm, is crucial to improving efficiency, reducing costs, and enhancing customer satisfaction. By using these techniques, delivery companies can minimize the time spent on route planning, prioritize urgent deliveries, and ensure that goods are distributed in a timely manner.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Delivery Services Optimization</p>
+    </footer>
+
+</body>
+</html>
