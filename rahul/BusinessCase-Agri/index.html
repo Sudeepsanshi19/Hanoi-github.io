@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Case Study: Agriculture Optimization</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h2 {
+            color: #27ae60;
+            border-bottom: 3px solid #27ae60;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #2980b9;
+            margin-top: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        ul {
+            margin: 10px 0 0 20px;
+            padding: 0;
+        }
+        ul ul {
+            margin-top: 5px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        li strong {
+            color: #34495e;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
+        }
+        details {
+            margin-top: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        details summary {
+            font-weight: bold;
+            cursor: pointer;
+        }
+        details pre {
+            margin: 10px 0 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Business Case Study: Agriculture Optimization</h1>
+    </header>
+
+    <main>
+        <!-- Overview Section -->
+        <div class="section">
+            <h2>Overview</h2>
+            <p>Agriculture is an essential industry that requires optimization to improve yield, minimize wastage, and enhance operational efficiency. In this case study, we explore how algorithms can be applied to optimize agricultural networks (like pipeline distribution) and harvest management. By using algorithms such as Minimum Spanning Tree (MST), Sorting algorithms, and others, we can streamline operations and increase productivity in the agricultural sector.</p>
+        </div>
+
+        <!-- Business Case Mapped to SDGs -->
+<div class="section">
+    <h2>Business Case Mapped to SDGs</h2>
+    <p>In this case study, optimizing agricultural systems contributes to several targets under SDG 11 (Sustainable Cities and Communities). The application of efficient algorithms such as Minimum Spanning Tree (MST), Sorting algorithms, and String Matching algorithms helps reduce resource wastage, improve operational efficiency, and promote sustainable farming practices.</p>
+    
+    <table>
+        <thead>
+            <tr style="background-color: #27ae60; color: white;">
+                <th style="padding: 10px;">SDG Target</th>
+                <th style="padding: 10px;">Indicators</th>
+                <th style="padding: 10px;">Relevance to Agricultural Optimization</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+            <!-- Row 1: Pipeline Network Optimization -->
+            <tr>
+                <td style="padding: 10px;">Target 11.7: Accessible Public Spaces</td>
+                <td style="padding: 10px;">11.7.1: Public space in urban areas<br>11.7.2: Access to public transport</td>
+                <td style="padding: 10px;">By optimizing water distribution, agricultural communities can access more sustainable resources, supporting public space and community resilience.</td>
+            </tr>
+            
+            <!-- Row 2: Fruit Sorting Optimization -->
+            <tr>
+                <td style="padding: 10px;">Target 11.b: Disaster Resilience</td>
+                <td style="padding: 10px;">11.b.1: National disaster risk strategies<br>11.b.2: Local disaster risk management</td>
+                <td style="padding: 10px;">Efficient sorting and resource management contribute to agricultural resilience during adverse conditions by enabling faster responses to emergencies like food shortages.</td>
+            </tr>
+
+            <!-- Row 3: Crop Disease Detection -->
+            <tr>
+                <td style="padding: 10px;">Target 11.6: Environmental Impact</td>
+                <td style="padding: 10px;">11.6.1: Urban waste collection<br>11.6.2: PM2.5 levels</td>
+                <td style="padding: 10px;">Early detection of crop diseases through data analysis reduces the use of pesticides, minimizing environmental pollution and improving air and water quality in agricultural regions.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+  
+         
+        <!-- Agricultural Network (Pipeline Optimization) -->
+        <div class="section">
+            <h2>Agricultural Network Optimization</h2>
+            <h3>Introduction</h3>
+            <p>Optimizing the pipeline network for irrigation systems is critical for maximizing water efficiency across agricultural lands. The goal is to create a network that connects all the farms using the least amount of pipe (cost-effective solution). This can be accomplished using Minimum Spanning Tree (MST) algorithms.</p>
+
+            <h3>Case: Pipeline Network Design (MST Algorithms)</h3>
+            <p>In this case, we aim to minimize the total length of piping required to connect multiple farms for water distribution. The MST algorithms such as Kruskal’s and Prim’s algorithms can be used to solve this problem efficiently.</p>
+            <p><strong>Solution:</strong> We model the farms as nodes and the possible pipeline connections between them as edges in a graph. Using Kruskal’s or Prim’s algorithm, we find the minimum spanning tree that connects all the farms with the least pipe length.</p>
+            
+            <h3>Steps for MST in Agricultural Pipeline Optimization:</h3>
+            <ul>
+                <li><strong>Graph Construction:</strong> Represent farms as nodes and pipeline options as edges.</li>
+                <li><strong>Kruskal’s/Prim’s Algorithm:</strong> Apply the algorithm to find the minimum cost connection between all farms.</li>
+                <li><strong>Result:</strong> The resulting network is the most cost-effective irrigation system, ensuring minimal resource wastage.</li>
+            </ul>
+        </div>
+
+        
+          
+        <!-- Harvesting Optimization (Fruit Sorting Based on Quality) -->
+        <div class="section">
+            <h2>Fruit Harvesting Optimization</h2>
+            <h3>Introduction</h3>
+            <p>In harvesting, fruits are categorized based on quality (e.g., ripe, unripe, damaged) to ensure that only the best quality fruits are sent to the market. Sorting algorithms can be used to sort these fruits efficiently based on their quality score.</p>
+
+            <h3>Case: Sorting Fruits by Quality (Sorting Algorithms)</h3>
+            <p>Here, we need to sort fruits into different categories based on their quality score (e.g., using a score from 1 to 100, where 1 is the best quality). We can use sorting algorithms like Merge Sort or Quick Sort to arrange these fruits efficiently.</p>
+            <p><strong>Solution:</strong> A sorting algorithm like **Merge Sort** or **Quick Sort** is applied to sort the fruits based on their quality score, allowing farmers to quickly classify and send them to the appropriate markets.</p>
+            
+            <h3>Steps for Fruit Sorting:</h3>
+            <ul>
+                <li><strong>Assign Quality Scores:</strong> Each fruit is assigned a quality score based on factors such as ripeness, size, and condition.</li>
+                <li><strong>Sort Fruits:</strong> Use an efficient sorting algorithm (like Merge Sort or Quick Sort) to arrange fruits in descending order of quality.</li>
+                <li><strong>Distribution:</strong> Fruits are then sorted into different categories (e.g., premium, regular, and low-quality) for targeted marketing and sale.</li>
+            </ul>
+        </div>
+
+        <!-- Crop Disease Detection Using KMP Algorithm -->
+        <div class="section">
+            <h2>Crop Disease Detection Using String Matching Algorithms</h2>
+            <h3>Introduction</h3>
+            <p>Crop diseases can be identified by analyzing sensor data, farmer reports, or symptoms listed in agricultural health records. Efficiently detecting certain disease keywords in these text-based reports can help farmers take timely actions. In this case, we use the **Knuth-Morris-Pratt (KMP)** string matching algorithm to search for specific disease patterns in textual data such as sensor logs or disease-related reports.</p>
+
+            <h3>Case: Detecting Disease Patterns in Reports (KMP Algorithm)</h3>
+            <p>The goal here is to detect the presence of disease-related keywords (like "blight", "rust", or "wilt") in large agricultural reports or sensor logs. These reports are collected in the field and contain a lot of unstructured text. Using a string matching algorithm like **Knuth-Morris-Pratt (KMP)**, we can efficiently search through these reports to identify disease-related patterns quickly and accurately.</p>
+            <p><strong>Solution:</strong> We apply the **KMP algorithm** to search for disease keywords in the textual reports from sensors or farmers. The KMP algorithm improves search efficiency by avoiding unnecessary re-checking of previously matched characters in the text.</p>
+
+            <h3>Steps for Disease Detection Using KMP:</h3>
+            <ul>
+                <li><strong>Define Disease Keywords:</strong> Create a list of known disease patterns or keywords (e.g., "blight", "rust", "wilt").</li>
+                <li><strong>Apply KMP Algorithm:</strong> Use the KMP algorithm to search for these keywords in the sensor data or textual reports.</li>
+                <li><strong>Result:</strong> Quickly detect whether any reports mention disease keywords, enabling rapid intervention.</li>
+            </ul>
+        </div>
+
+        <!-- Example C++ Code for Kruskal, Merge Sort and KMP Algorithm -->
+        <div class="section">
+            <h2>Example C++ Code for Kruskal, Merge Sort, and KMP Algorithm</h2>
+            <details>
+                <summary>View C++ Code</summary>
+                <pre>
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+// Kruskal's Algorithm (MST)
+struct Edge {
+    int u, v, weight;
+};
+
+int findParent(int node, int parent[]) {
+    if (parent[node] != node)
+        parent[node] = findParent(parent[node], parent);
+    return parent[node];
+}
+
+void kruskalMST(int n, Edge edges[], int m) {
+    int parent[n];
+    for (int i = 0; i < n; ++i)
+        parent[i] = i;
+
+    cout << "The optimized pipeline network for water distribution (MST):\n";
+    for (int i = 0; i < m; ++i) {
+        int u = edges[i].u, v = edges[i].v;
+        if (findParent(u, parent) != findParent(v, parent)) {
+            parent[findParent(u, parent)] = findParent(v, parent);
+            cout << "Farm " << u << " connected to Farm " << v << " with a pipe length of " << edges[i].weight << " units.\n";
+        }
+    }
+}
+
+// Merge Sort (Fruit Sorting by Quality)
+void merge(int arr[], int left, int mid, int right) {
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+    int L[n1], R[n2];
+
+    for (int i = 0; i < n1; ++i)
+        L[i] = arr[left + i];
+    for (int j = 0; j < n2; ++j)
+        R[j] = arr[mid + 1 + j];
+
+    int i = 0, j = 0, k = left;
+    while (i < n1 && j < n2) {
+        if (L[i] >= R[j]) {
+            arr[k] = L[i];
+            i++;
+        } else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+}
+
+void mergeSort(int arr[], int left, int right) {
+    if (left < right) {
+        int mid = left + (right - left) / 2;
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid + 1, right);
+        merge(arr, left, mid, right);
+    }
+}
+
+// KMP Algorithm (Crop Disease Detection)
+void computeLPSArray(char pattern[], int m, int lps[]) {
+    int length = 0;
+    lps[0] = 0;
+    int i = 1;
+
+    while (i < m) {
+        if (pattern[i] == pattern[length]) {
+            length++;
+            lps[i] = length;
+            i++;
+        } else {
+            if (length != 0) {
+                length = lps[length - 1];
+            } else {
+                lps[i] = 0;
+                i++;
+            }
+        }
+    }
+}
+
+void KMPSearch(char text[], char pattern[]) {
+    int n = strlen(text);
+    int m = strlen(pattern);
+    int lps[m];
+    computeLPSArray(pattern, m, lps);
+
+    int i = 0, j = 0;
+    while (i < n) {
+        if (pattern[j] == text[i]) {
+            i++;
+            j++;
+        }
+
+        if (j == m) {
+            cout << "Disease pattern detected at index " << i - j << " in the field report.\n";
+            j = lps[j - 1];
+        } else if (i < n && pattern[j] != text[i]) {
+            if (j != 0) {
+                j = lps[j - 1];
+            } else {
+                i++;
+            }
+        }
+    }
+}
+
+int main() {
+    // Kruskal's Algorithm (MST)
+    int n = 6, m = 8; // More farms
+    Edge edges[m] = {
+        {0, 1, 10}, {0, 2, 6}, {0, 3, 5}, {1, 3, 15},
+        {2, 3, 4}, {3, 4, 7}, {2, 4, 9}, {0, 5, 8} // Farm 0 as main reservoir, more farms added
+    };
+    kruskalMST(n, edges, m);
+    
+    // Merge Sort (Fruit Quality Sorting)
+    int fruits[] = {90, 60, 100, 85, 70};
+    int n_fruits = sizeof(fruits) / sizeof(fruits[0]);
+    mergeSort(fruits, 0, n_fruits - 1);
+    cout << "\nFruits sorted by quality:\n";
+    for (int i = 0; i < n_fruits; ++i)
+        cout << fruits[i] << " ";
+    cout << endl;
+    cout<<endl;
+    
+    // KMP Algorithm (Crop Disease Detection)
+    char text[] = "The crop showed symptoms of blight, rust, and wilting in the northeast corner.";
+    char pattern[] = "blight";
+    KMPSearch(text, pattern);
+
+    return 0;
+}
+                </pre>
+            </details>
+        </div>
+        
+        <div class="section">
+    <h2>Algorithms and Approaches Used in This Case Study</h2>
+    <ul>
+        <li><b>Minimum Spanning Tree (MST):</b> Used in the Agricultural Network Optimization case to design the most cost-effective irrigation system, minimizing pipeline length and connection costs between farms.</li>
+        <li><b>Merge Sort:</b> Applied in Fruit Harvesting Optimization to efficiently sort fruits based on quality scores, ensuring better classification for market distribution.</li>
+        <li><b>Knuth-Morris-Pratt (KMP) Algorithm:</b> Used in Crop Disease Detection to search for disease-related keywords in agricultural reports, helping detect issues quickly and accurately.</li>
+    </ul>
+</div>
+
+
+        <!-- Conclusion Section -->
+        <div class="section">
+            <h2>Conclusion</h2>
+            <p>By applying algorithms such as Minimum Spanning Tree (MST), Sorting algorithms, and String Matching algorithms like KMP, we can effectively optimize agricultural networks, harvest systems, and even detect potential crop diseases from sensor data or farmer reports. These solutions help reduce costs, improve efficiency, and ensure better resource utilization, contributing to more sustainable farming practices.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Agriculture Optimization Solutions. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
